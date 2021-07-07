@@ -8,7 +8,9 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
 import LinearGradient from 'react-native-linear-gradient';
+
 export default function Home(props) {
+    console.log("-------------------->",props.navigation.openDrawer)
     return (
         <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
 
@@ -22,7 +24,7 @@ export default function Home(props) {
             {/* <==========================> --- <==========================> */}
             <View style={[styles._header_main, Theme._HeaderBg]}>
                 <View style={styles._menu_main}>
-                    <TouchableOpacity style={styles._menu_btn}>
+                    <TouchableOpacity style={styles._menu_btn}  onPress={() => props.navigation.openDrawer()}>
                         <Entypo name="menu" size={30} style={Theme._MenuIconColor} />
                     </TouchableOpacity>
                 </View>
@@ -45,13 +47,13 @@ export default function Home(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}
-                {/* <LinearGradient colors={[Theme._LinearGradientFirst, Theme._LinearGradientSecond]} style={styles._Card_main} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+                <LinearGradient colors={[Theme._LinearGradientFirst, Theme._LinearGradientSecond]} style={styles._Card_main} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                     <View style={styles._lines_main}>
                         <View style={styles._line}></View>
                         <Text>Today's Quote</Text>
                         <View style={styles._line}></View>
                     </View>
-                </LinearGradient> */}
+                </LinearGradient>
             </ScrollView>
 
             {/* <==========================> --- <==========================> */}
