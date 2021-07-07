@@ -6,10 +6,11 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import Feather from 'react-native-vector-icons/dist/Feather';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import Theme from './../../Constant/Constant'
+import Theme from './../../Constant/Constant';
+import LinearGradient from 'react-native-linear-gradient';
 export default function Home(props) {
     return (
-        <View style={[styles._HomePageContainer,Theme._HomePageContainer]}>
+        <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
 
             {/* <==========================> --- <==========================> */}
             <StatusBar
@@ -43,7 +44,14 @@ export default function Home(props) {
 
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
-        
+                {/* <==========================> --- <==========================> */}
+                {/* <LinearGradient colors={[Theme._LinearGradientFirst, Theme._LinearGradientSecond]} style={styles._Card_main} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+                    <View style={styles._lines_main}>
+                        <View style={styles._line}></View>
+                        <Text>Today's Quote</Text>
+                        <View style={styles._line}></View>
+                    </View>
+                </LinearGradient> */}
             </ScrollView>
 
             {/* <==========================> --- <==========================> */}
@@ -138,5 +146,15 @@ const styles = StyleSheet.create({
     },
     _tab_bar_title: {
         fontSize: 12
+    },
+
+    // ====================>  <====================
+    _Card_main: {
+        margin: 10,
+        borderRadius: 10,
+        padding: 20
+    },
+    _lines_main:{
+        flexDirection:"row"
     }
 });

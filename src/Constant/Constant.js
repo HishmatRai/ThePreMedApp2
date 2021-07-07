@@ -4,7 +4,7 @@ const styles = {
     },
 
     _MenuIconColor: {
-        color: "#a6a6a6"
+        color: "#1a2334"
     },
 
     _StatusBarBg: "black",
@@ -14,7 +14,7 @@ const styles = {
     },
 
     _HomePageContainer: {
-        backgroundColor: "#dbdbdb"
+        backgroundColor: "#e6eaed"
     },
 
     _GrayColor: {
@@ -52,11 +52,11 @@ const styles = {
     },
 
     _ActiveColor: {
-        color: '#3e84ff'
+        color: '#4e84e3'
     },
 
     _TabsIconColor: {
-        color: "#a6a6a6"
+        color: "#717171"
     },
 
     _TabBarBorder: {
@@ -64,7 +64,7 @@ const styles = {
     },
 
     _NotificationIconColor: {
-        color: "black"
+        color: "#1a2334"
     }
 }
 
