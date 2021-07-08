@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
@@ -8,9 +8,15 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
 import LinearGradient from 'react-native-linear-gradient';
-
+import Goals from './../../Components/Goals/Goals'
 export default function Progress(props) {
-    console.log("-------------------->", props.navigation.openDrawer)
+    const [tabs, setTabs] = useState(0);
+    let TabsTitle =[
+        {title:"Goals"},
+        {title:"Application"},
+        {title:"Top Schools"},
+    ]
+
     return (
         <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
 
@@ -45,9 +51,40 @@ export default function Progress(props) {
             </View>
 
             {/* <==========================> --- <==========================> */}
-            <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}
+<View style={styles.tabs_main}>
+<View style={styles._tabs}>
+    {TabsTitle.map((v,i)=>{
+        return(
+            <TouchableOpacity  onPress={() => setTabs(i)}
+            style={[tabs===i?[styles.tabActive,Theme._ActveTabBg]:styles.tabsList]}
+            >
+                <Text style={[tabs===i?[styles.tabText,Theme._ActveTabColor]:[styles.tabText,Theme.tabsColor]]}>{v.title}</Text>
+            </TouchableOpacity>
+        )
+    })}
+</View>
+<TouchableOpacity>
+    <Text>228 days</Text>
+</TouchableOpacity>
+</View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+{tabs === 0 ?
+<View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
+  <Goals/>
+</View> 
+:null}
+{tabs === 1 ?
+    <View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
+    <Text>fss</Text>
+</View> 
+:null}
 
+{tabs === 2 ?
+    <View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
+    <Text>dss</Text>
+</View> 
+:null}
             </ScrollView>
 
             {/* <==========================> --- <==========================> */}
@@ -145,5 +182,37 @@ const styles = StyleSheet.create({
     },
 
     // ====================>  <====================
-
+    tabs_main:{
+        marginTop:20,
+        paddingHorizontal:20,
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"space-between"
+    },
+    _tabs:{
+        flexDirection:"row",
+        width:"70%",
+        alignItems:"center",
+        justifyContent:"space-between"
+    },
+    tabActive:{
+        paddingHorizontal:10,
+        paddingVertical:15,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10
+    },
+    tabsList:{
+        paddingHorizontal:10,
+        paddingVertical:15,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10
+    },
+    tabText:{
+        fontWeight:"bold",
+        fontSize:16
+    },
+    _tabs_data_show:{
+        paddingHorizontal:10,
+        paddingVertical:20
+    }
 });

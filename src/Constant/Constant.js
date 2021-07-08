@@ -138,6 +138,19 @@ const styles = {
     },
     _HomeSubmitBtnBg:{
         backgroundColor: "#3e84ff"
+    },
+
+    _ActveTabBg:{
+        backgroundColor:"white"
+    },
+    _ActveTabColor:{
+        color:"#4d8af6"
+    },
+    tabsColor:{
+        color:"#adadad"
+    },
+    _TabsDataBg:{
+        backgroundColor:'white'
     }
 }
 
