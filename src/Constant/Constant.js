@@ -65,6 +65,79 @@ const styles = {
 
     _NotificationIconColor: {
         color: "#1a2334"
+    },
+
+
+    _DrawerLinearGradientFirst: "#55d4fd",
+
+    _DrawerLinearGradientSecond: '#418cff',
+
+    _DwawerProfileBg: {
+        backgroundColor: "#ff4500",
+        borderColor: 'white'
+    },
+
+    _DrawerScreenTitleColor: "#2b2b2b",
+
+    _DrawerServiceBtnLinearGradientFirst: "#12a185",
+
+    _DrawerServiceBtnLinearGradientSecond: '#31e17d',
+
+    _HomeCardLinearGradientFirst: "#5bbbed",
+
+    _HomeCardLinearGradientSecond: '#3d7bea',
+
+    _LineBgWhite: {
+        backgroundColor: "white"
+    },
+
+
+    _HomeScreenProgressBarBg: {
+        backgroundColor: "#e1e8ee"
+    },
+
+    _HomeGPAProgressRoundCircleBg: {
+        backgroundColor: "#4089fa"
+    },
+
+    _HomeMCATProgressRoundCircleBg: {
+        backgroundColor: "#55d9ff"
+    },
+
+    _HomeShadowingProgressRoundCircleBg: {
+        backgroundColor: "#fe8373"
+    },
+
+    _HomeVolunteeringProgressRoundCircleBg: {
+        backgroundColor: "#ffda82"
+    },
+
+    _HomeActivitiesProgressRoundCircleBg: {
+        backgroundColor: "#a4a1fa"
+    },
+
+    _HomeAddBtnBg: {
+        backgroundColor: "#3e84ff"
+    },
+
+    _QuestionsTextColor: {
+        color: "#2b2b2b"
+    },
+    _QuestionsBgColor: {
+        backgroundColor: "#FFE6AC"
+    },
+    _QuestionsOptionBg: {
+        backgroundColor: "#EFEFEF"
+    },
+
+    _QuestionsSelectOptionBg: {
+        backgroundColor: "#41C188"
+    },
+    _QuestionsOptionTextColor: {
+        color: "#2b2b2b"
+    },
+    _HomeSubmitBtnBg:{
+        backgroundColor: "#3e84ff"
     }
 }
 
