@@ -136,21 +136,27 @@ const styles = {
     _QuestionsOptionTextColor: {
         color: "#2b2b2b"
     },
-    _HomeSubmitBtnBg:{
+    _HomeSubmitBtnBg: {
         backgroundColor: "#3e84ff"
     },
 
-    _ActveTabBg:{
-        backgroundColor:"white"
+    _ActveTabBg: {
+        backgroundColor: "white"
     },
-    _ActveTabColor:{
-        color:"#4d8af6"
+    _ActveTabColor: {
+        color: "#4d8af6"
     },
-    tabsColor:{
-        color:"#adadad"
+    tabsColor: {
+        color: "#adadad"
     },
-    _TabsDataBg:{
-        backgroundColor:'white'
+    _TabsDataBg: {
+        backgroundColor: 'white'
+    },
+    _GraduatedBtnBg: {
+        backgroundColor: "#d2d2d2"
+    },
+    _EditeBtnBorderColor:{
+        borderColor:"#3e84ff"
     }
 }
 

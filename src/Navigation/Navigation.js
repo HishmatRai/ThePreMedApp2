@@ -22,7 +22,7 @@ function HomeDrawer() {
       initialRouteName="Home"
       drawerContent={(props) => <DrawerContent {...props} />}
     >
-      <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      {/* <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
       <Stack.Screen name="Progress" component={Progress} options={{ headerShown: false }} />
       <Stack.Screen name="MyMentor" component={MyMentor} options={{ headerShown: false }} />
       <Stack.Screen name="Calendar" component={Calendar} options={{ headerShown: false }} />
@@ -36,8 +36,8 @@ function Navigation(props) {
     <NavigationContainer>
       <Stack.Navigator>
 
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} /> */}
 
 
         <Stack.Screen
