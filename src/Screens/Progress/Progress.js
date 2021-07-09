@@ -8,7 +8,8 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
 import LinearGradient from 'react-native-linear-gradient';
-import Goals from './../../Components/Goals/Goals'
+import Goals from './../../Components/Goals/Goals';
+import Applications from './../../Components/Applications/Applications'
 export default function Progress(props) {
     const [tabs, setTabs] = useState(0);
     let TabsTitle =[
@@ -76,7 +77,7 @@ export default function Progress(props) {
 :null}
 {tabs === 1 ?
     <View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
-    <Text>fss</Text>
+   <Applications />
 </View> 
 :null}
 
