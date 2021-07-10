@@ -157,7 +157,55 @@ const styles = {
     },
     _EditeBtnBorderColor:{
         borderColor:"#3e84ff"
+    },
+
+    _StatementDotBg:{
+        backgroundColor:"#084278"
+    },
+
+    _PersonalStatementLinearGradientFirst: "#114e92",
+
+    _PersonalStatementLinearGradientSecond: '#3676e5',
+
+    _PersonalStatementTagsBg:{
+        backgroundColor:"#e5e5e5"
+    },
+
+    _PersonalStatementUnCheckBorderColor:{
+        borderColor:"#4787f9"
+    },
+    _PersonalStatementCheckBgColor:{
+        backgroundColor:"#3676e2"
+    },
+
+    _PersonalStatementCheckIconColor:"white",
+
+    _ViewMoreBtnTextColor:{
+        color:'#508cf7'
+    },
+
+    _ViewMoreBtnIconColor:"#508cf7",
+
+
+    _GPACardBg:{
+        backgroundColor:"#3e84ff"
+    },
+    _MCATCardBg:{
+        backgroundColor:"#64dcfe"
+    },
+    _ShadowingCardBg:{
+        backgroundColor:"#fe8373"
+    },
+    _VolunteeringCardBg:{
+        backgroundColor:"#ffcd5a"
+    },
+    _WorkActivitiesCardBg:{
+        backgroundColor:'#a4a1fc'
+    },
+    _ApplicationCardBg:{
+        backgroundColor:"#004179"
     }
+    
 }
 
 

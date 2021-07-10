@@ -23,7 +23,7 @@ function HomeDrawer() {
       drawerContent={(props) => <DrawerContent {...props} />}
     >
       {/* <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
-      <Stack.Screen name="Progress" component={Progress} options={{ headerShown: false }} />
+      {/* <Stack.Screen name="Progress" component={Progress} options={{ headerShown: false }} /> */}
       <Stack.Screen name="MyMentor" component={MyMentor} options={{ headerShown: false }} />
       <Stack.Screen name="Calendar" component={Calendar} options={{ headerShown: false }} />
       <Stack.Screen name="Focus" component={Focus} options={{ headerShown: false }} />
