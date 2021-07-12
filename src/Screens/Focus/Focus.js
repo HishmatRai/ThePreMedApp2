@@ -5,14 +5,15 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import Feather from 'react-native-vector-icons/dist/Feather';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Theme from './../../Constant/Constant';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function Focus(props) {
-    console.log("-------------------->", props.navigation.openDrawer)
     return (
-        <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
+        <View style={[styles._HomePageContainer, Theme._CalendarPageContainer]}>
 
             {/* <==========================> --- <==========================> */}
             <StatusBar
@@ -47,9 +48,29 @@ export default function Focus(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}
+                <View style={styles._todays_focus_main}>
+                    <View style={styles._todays_focus}>
+                        <Text style={[styles._todays_focus_heading, Theme._QuestionsTextColor]}>Today's Focus Targets</Text>
+                        <FontAwesome5 name="sort-amount-up" size={20} style={Theme._TabsIconColor} />
+                    </View>
+                    <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]}>
+                        <MaterialIcons name="add" size={25} color="white" />
+                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
+                    </TouchableOpacity>
+                </View>
 
+                {/* <==========================> --- <==========================> */}
+                <TouchableOpacity style={[styles._set_target_btn, Theme._SetTargetBtnBg]}>
+                    <Text style={[styles._set_target_btn_text, Theme._GrayColor]}>Set a Target</Text>
+                </TouchableOpacity>
             </ScrollView>
 
+            {/* <==========================> --- <==========================> */}
+            <TouchableOpacity style={[styles._timer_setting_btn, Theme._HomeSubmitBtnBg]}>
+                <Text style={[styles._timer_setting_btn_text, Theme._TextWhiteColor]}>Timer Setting</Text>
+                <FontAwesome name="angle-double-up" size={25} color="white" />
+            </TouchableOpacity>
+            <View style={[styles._bottom_line, Theme._HomeSubmitBtnBg]}></View>
             {/* <==========================> --- <==========================> */}
             <View style={[styles._tab_bar_main, Theme._TabBarBg, Theme._TabBarBorder]}>
                 <TouchableOpacity style={styles._tabs_main} onPress={() => props.navigation.navigate("Home")}>
@@ -145,5 +166,67 @@ const styles = StyleSheet.create({
     },
 
     // ====================>  <====================
+    _bottom_line: {
+        height: 10
+    },
+    _timer_setting_btn: {
+        width: "40%",
+        marginLeft: "10%",
+        flexDirection: "row",
+        alignItems: "center",
+        height: 30,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        justifyContent: "center"
+    },
+    _timer_setting_btn_text: {
+        fontWeight: "bold",
+        marginRight: 10
+    },
+    _add_btn: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "30%",
+        justifyContent: "space-between",
+        borderRadius: 5,
+        height: 40,
+        paddingHorizontal: 15
+    },
 
+    _add_btn_text: {
+        fontWeight: "bold",
+        fontSize: 18,
+        letterSpacing: 1
+    },
+    _todays_focus_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingHorizontal: 20,
+        paddingVertical: 20
+    },
+    _todays_focus: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    _todays_focus_heading: {
+        fontWeight: "bold",
+        marginRight: 10
+    },
+    _set_target_btn: {
+        marginVertical: 20,
+        marginHorizontal: 20,
+        width: 250,
+        height: 250,
+        borderWidth: 5,
+        borderRadius: 250 / 2,
+        alignSelf: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 70
+    },
+    _set_target_btn_text: {
+        fontWeight: "bold",
+        fontSize: 18
+    }
 });

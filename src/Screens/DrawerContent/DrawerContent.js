@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StatusBar, Text, TouchableOpacity } from "react-native";
+import { View, Image, StatusBar, Text, TouchableOpacity,Linking  } from "react-native";
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -10,6 +10,7 @@ import Theme from './../../Constant/Constant';
 import styles from "./styles";
 import { Drawer } from "react-native-paper";
 import LinearGradient from 'react-native-linear-gradient';
+import { Link, Center, NativeBaseProvider } from "native-base"
 export default function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -39,16 +40,19 @@ export default function CustomDrawerContent(props) {
             fontSize: 18,
             color: Theme._DrawerScreenTitleColor
           }}
-        />
-        <DrawerItem
-          label="Suppport"
-          labelStyle={{
-            fontWeight: "bold",
-            fontSize: 18,
-            color: Theme._DrawerScreenTitleColor
-          }}
+          onPress={() => props.navigation.navigate("Onboarding")}
         />
 
+          <DrawerItem
+            label="Suppport"
+            labelStyle={{
+              fontWeight: "bold",
+              fontSize: 18,
+              color: Theme._DrawerScreenTitleColor,
+            }}
+            onPress={() => Linking.openURL('https://www.motivatemd.com/the-premed-app/support/')}
+          />
+  
         <DrawerItem
           label="Settings"
           labelStyle={{
@@ -56,6 +60,7 @@ export default function CustomDrawerContent(props) {
             fontSize: 18,
             color: Theme._DrawerScreenTitleColor,
           }}
+         
         />
 
         <DrawerItem
@@ -65,14 +70,15 @@ export default function CustomDrawerContent(props) {
             fontSize: 18,
             color: Theme._DrawerScreenTitleColor
           }}
+          onPress={()=> props.navigation.navigate("Login")}
         />
-        <TouchableOpacity style={styles._services_btn}>
+        <TouchableOpacity style={styles._services_btn}  onPress={() => Linking.openURL('https://www.motivatemd.com/the-premed-app/services/')}>
           <LinearGradient colors={[Theme._DrawerServiceBtnLinearGradientFirst, Theme._DrawerServiceBtnLinearGradientSecond]} style={styles._services_btn_gradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
             <Text style={[styles._services_btn_text, Theme._TextWhiteColor]}>Services</Text>
             <Feather name="arrow-right-circle" size={30} color="white" />
           </LinearGradient>
         </TouchableOpacity>
-        <Text style={[styles._version,Theme._DrawerScreenTitleColor]}>Version:1.0.4</Text>
+        <Text style={[styles._version, Theme._DrawerScreenTitleColor]}>Version:1.0.4</Text>
       </View>
     </DrawerContentScrollView >
   );

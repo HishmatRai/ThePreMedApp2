@@ -6,7 +6,6 @@ import Fontisto from 'react-native-vector-icons/dist/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5';
 import RBSheet from "react-native-raw-bottom-sheet";
-import DateTimePicker from "react-native-modal-datetime-picker";
 export default function Goals(props) {
   const [currentGPA, onChangeCurrentGPA] = React.useState("");
   const [scienceGPA, onChangeScienceGPA] = React.useState("");

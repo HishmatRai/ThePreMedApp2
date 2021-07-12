@@ -7,12 +7,11 @@ import Feather from 'react-native-vector-icons/dist/Feather';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
-import LinearGradient from 'react-native-linear-gradient';
-
+import CalendarPicker from './../../Components/Calendar/Calendar';
+import Fontisto from 'react-native-vector-icons/dist/Fontisto';
 export default function Calendar(props) {
-    console.log("-------------------->", props.navigation.openDrawer)
     return (
-        <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
+        <View style={[styles._HomePageContainer, Theme._CalendarPageContainer]}>
 
             {/* <==========================> --- <==========================> */}
             <StatusBar
@@ -47,7 +46,18 @@ export default function Calendar(props) {
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}
+                <View style={[styles._body, Theme._MyMentorListMain]}>
+                    <CalendarPicker />
+                </View>
 
+                {/* <==========================> --- <==========================> */}
+                <View style={styles._upcomming_events_main}>
+                    <Text style={[styles._upcomming_events_heading, Theme._QuestionsTextColor]}>Upcomming Events</Text>
+                    <TouchableOpacity style={[styles._doctor_btn, Theme._HomeSubmitBtnBg]}>
+                        <Fontisto name="doctor" size={20} color="white" />
+                    </TouchableOpacity>
+                    <Text style={[styles._no_event, Theme._QuestionsTextColor]}>No events to show</Text>
+                </View>
             </ScrollView>
 
             {/* <==========================> --- <==========================> */}
@@ -145,5 +155,31 @@ const styles = StyleSheet.create({
     },
 
     // ====================>  <====================
- 
+    _body: {
+        flex: 1,
+        paddingTop: 30,
+        borderBottomWidth: 2,
+        paddingBottom: 20
+    },
+    _upcomming_events_main: {
+        paddingVertical: 20,
+        paddingHorizontal: 20
+    },
+    _upcomming_events_heading: {
+        fontWeight: "bold"
+    },
+    _doctor_btn: {
+        width: 40,
+        height: 40,
+        borderRadius: 40,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 30,
+        alignSelf: "flex-end"
+    },
+    _no_event: {
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: 50
+    }
 });
