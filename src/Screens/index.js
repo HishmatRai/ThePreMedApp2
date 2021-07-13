@@ -9,7 +9,10 @@ import Onboarding from './Onboarding/Onboarding';
 import DrawerContent from './DrawerContent/DrawerContent';
 import EducationNo from './Onboarding/EducationNo';
 import EducationYes from './Onboarding/EducationYes';
-import Mcat from './Onboarding/Mcat'
+import Mcat from './Onboarding/Mcat';
+import McatYes from './Onboarding/McatYes';
+import TopSchools from './Onboarding/TopSchools';
+import GoalsStep from './Onboarding/GoalsStep'
 export {
     Login,
     SignUp,
@@ -22,5 +25,8 @@ export {
     DrawerContent,
     EducationNo,
     EducationYes,
-    Mcat
+    Mcat,
+    McatYes,
+    TopSchools,
+    GoalsStep
 }

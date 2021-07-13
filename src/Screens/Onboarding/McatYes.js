@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
-export default function Mcat(props) {
+import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import {
+    Select,
+    CheckIcon,
+    Link
+} from "native-base"
+export default function McatYes(props) {
+    let [language, setLanguage] = React.useState("")
     return (
         <View style={[styles.container, Theme._Container]}>
 
@@ -26,6 +33,8 @@ export default function Mcat(props) {
                         </View>
                         {/* <==========================> --- <==========================> */}
                         <View style={[styles._data_main, Theme._OnboardingDataBg]}>
+
+                            {/* <==========================> --- <==========================> */}
                             <View style={styles._data_header_main}>
                                 <View style={[styles._data_number_main]}>
                                     <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
@@ -60,23 +69,84 @@ export default function Mcat(props) {
                                     </View>
                                 </View>
                             </View>
+
+                            {/* <==========================> --- <==========================> */}
                             <Image
                                 source={require("./../../img/logoIcon.png")}
                                 style={styles._logo}
                             />
-                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Have you taken the MCAT?</Text>
-                            <View style={styles._no_yes_btn_main}>
-                                <TouchableOpacity style={[styles._no_btn, Theme._NoBtnBg]} >
-                                    <Text style={[styles._no_btn_text, Theme._GrayColor]}>No</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={[styles._no_btn, Theme._YesBtnBg]} onPress={() => props.navigation.navigate("McatYes")}>
-                                    <Text style={[styles._no_btn_text, Theme._TextWhiteColor]}>Yes</Text>
-                                </TouchableOpacity>
+
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>How'd you Do?</Text>
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Chemical and Physical Foundations of Biological Systems</Text>
+                            <View style={[styles._input_main, Theme._InputBorderColor]}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="0"
+                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
+                                    color={Theme._InputTextColor}
+                                    keyboardType='numeric'
+                                />
                             </View>
 
-                                         {/* <==========================> --- <==========================> */}
-                                         <View style={styles._skip_back_main}>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate0("Onboarding")}>
+                              {/* <==========================> --- <==========================> */}
+                              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Biological and Biochemical Foundations of Living Systems</Text>
+                            <View style={[styles._input_main, Theme._InputBorderColor]}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="0"
+                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
+                                    color={Theme._InputTextColor}
+                                    keyboardType='numeric'
+                                />
+                            </View>
+
+                                     {/* <==========================> --- <==========================> */}
+                                     <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Critical Analysis and Reasoning Skills</Text>
+                            <View style={[styles._input_main, Theme._InputBorderColor]}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="0"
+                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
+                                    color={Theme._InputTextColor}
+                                    keyboardType='numeric'
+                                />
+                            </View>
+
+                                   {/* <==========================> --- <==========================> */}
+                                   <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Physical, Social, and Biological Foundation of Behavior</Text>
+                            <View style={[styles._input_main, Theme._InputBorderColor]}>
+                                <TextInput
+                                    style={styles.input}
+                                    placeholder="0"
+                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
+                                    color={Theme._InputTextColor}
+                                    keyboardType='numeric'
+                                />
+                            </View>
+
+                                          {/* <==========================> --- <==========================> */}
+              <Text style={[styles.Overall, Theme._QuestionsTextColor]}>Overall Total MCAT Score: 0</Text>
+              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Test Date</Text>
+              <View style={[styles._input_main, Theme._InputBorderColor]}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="0"
+                  placeholderTextColor={Theme._InputPlaceholderTextColor}
+                  color={Theme._InputTextColor}
+                  keyboardType='numeric'
+                />
+                
+              </View>
+
+                            {/* <==========================> --- <==========================> */}
+                            <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("TopSchools")}>
+                                <Text style={[styles._continue_btn_text, Theme._TextWhiteColor]}>Continue</Text>
+                            </TouchableOpacity>
+                            {/* <==========================> --- <==========================> */}
+                            <View style={styles._skip_back_main}>
+                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.goBack()}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
                                 </TouchableOpacity>
@@ -85,7 +155,6 @@ export default function Mcat(props) {
                                     <Entypo name="chevron-small-right" size={24} color="#4888f8" />
                                 </TouchableOpacity>
                             </View>
-
                         </View>
                     </View>
                 </ScrollView>
@@ -171,29 +240,11 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginVertical: 10
     },
-    _no_yes_btn_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        width: "40%",
-        alignSelf: "center",
-        marginTop:20
-    },
-    _no_btn: {
-        width: "45%",
-        height: 30,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    _no_btn_text: {
-        fontWeight: 'bold'
-    },
+
     _skip_btn: {
         flexDirection: "row",
         alignItems: "center",
         alignSelf: "flex-end",
-        marginTop: 20
     },
     _skip_back_main: {
         flexDirection: "row",
@@ -201,4 +252,67 @@ const styles = StyleSheet.create({
         marginTop: 20,
         justifyContent: "space-between"
     },
+    _accourdian_input_title: {
+        fontWeight: 'bold',
+        marginTop: 10
+    },
+    _input_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        borderRadius: 5,
+        justifyContent: "space-between",
+        borderWidth: 1,
+        marginTop: 5,
+        paddingHorizontal: 10,
+        paddingVertical: 0
+    },
+    _input_main2: {
+        flexDirection: "row",
+        alignItems: "center",
+        borderRadius: 5,
+        justifyContent: "space-between",
+        borderWidth: 1,
+        marginTop: 5,
+        paddingHorizontal: 10,
+        paddingVertical: 0,
+        width: "80%"
+    },
+    input: {
+        width: "100%",
+        letterSpacing: 1
+    },
+    _major_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    add_btn: {
+        width: "15%",
+        height: 50,
+        borderRadius: 5,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 5,
+    },
+    _credits_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    _credits: {
+        width: "48%"
+    },
+    _continue_btn: {
+        width: "30%",
+        height: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 5,
+        alignSelf: "flex-end",
+        marginTop: 30,
+        marginBottom: 30
+    },
+    _continue_btn_text: {
+        fontWeight: "bold"
+    }
 });

@@ -4,7 +4,12 @@ import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
-export default function Mcat(props) {
+import {
+    Select,
+    CheckIcon,
+    Link
+} from "native-base"
+export default function TopSchools(props) {
     return (
         <View style={[styles.container, Theme._Container]}>
 
@@ -34,18 +39,18 @@ export default function Mcat(props) {
                                 </View>
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
                                 <View style={[styles._data_number_main]}>
+                                    <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
+                                    <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                    </View>
+                                </View>
+                                <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
+                                <View style={[styles._data_number_main]}>
                                     <View style={[[styles._active_number, Theme._ActiveNumberBg]]}>
-                                        <Text style={[styles._active_number_text, Theme._TextWhiteColor]}>2</Text>
+                                        <Text style={[styles._active_number_text, Theme._TextWhiteColor]}>3</Text>
                                     </View>
                                 </View>
                                 <View style={styles._header_heading_2_main}>
-                                    <Text style={[styles._active_heading, Theme._QuestionsTextColor]}>MCAT</Text>
-                                </View>
-                                <View style={[styles._line_main, Theme._AllStepsLineBg]}></View>
-                                <View style={[styles._data_number_main]}>
-                                    <View style={[[styles._All_numbers_main, Theme._AllStepsNumberBorderColor]]}>
-                                        <Text style={[styles._active_number_text, Theme._GrayColor]}>3</Text>
-                                    </View>
+                                    <Text style={[styles._active_heading, Theme._QuestionsTextColor]}>Top Schools</Text>
                                 </View>
                                 <View style={[styles._line_main, Theme._AllStepsLineBg]}></View>
                                 <View style={[styles._data_number_main]}>
@@ -64,23 +69,42 @@ export default function Mcat(props) {
                                 source={require("./../../img/logoIcon.png")}
                                 style={styles._logo}
                             />
-                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Have you taken the MCAT?</Text>
-                            <View style={styles._no_yes_btn_main}>
-                                <TouchableOpacity style={[styles._no_btn, Theme._NoBtnBg]} >
-                                    <Text style={[styles._no_btn_text, Theme._GrayColor]}>No</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={[styles._no_btn, Theme._YesBtnBg]} onPress={() => props.navigation.navigate("McatYes")}>
-                                    <Text style={[styles._no_btn_text, Theme._TextWhiteColor]}>Yes</Text>
-                                </TouchableOpacity>
+                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Top School Picks</Text>
+                            <Text style={[styles._graduated_colllege, Theme._GrayColor]}>
+Coming soon: Depending on your membership the app will automatically suggest GPA and MCAT goals beased on the competitiveness of your selected top schools.</Text>
+
+           {/* <==========================> --- <==========================> */}
+           <View style={styles._dropdown}>
+                                <Select
+                                    minWidth="100%"
+                                    accessibilityLabel="District OF Colummbia"
+                                    placeholder="District OF Colummbia"
+                                    _selectedItem={{
+                                        bg: "cyan.600",
+                                        endIcon: <CheckIcon size={4} />,
+                                    }}
+                                >
+                                    <Select.Item label="Alabama" value="Alabama" />
+                                    <Select.Item label="Alaska" value="Alaska" />
+                                    <Select.Item label="Arizona" value="Arizona" />
+                                    <Select.Item label="Arkansas" value="Arkansas" />
+                                    <Select.Item label="California" value="California" />
+
+                                </Select>
                             </View>
 
+                             {/* <==========================> --- <==========================> */}
+                             <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("GoalsStep")}>
+                                <Text style={[styles._continue_btn_text, Theme._TextWhiteColor]}>Continue</Text>
+                            </TouchableOpacity>
+                            <Text style={[styles._graduated_colllege, Theme._GrayColor]}>You can later add, edit and sort this list, plus add notes for each school in the Top Schools tab your progress Page.</Text>
                                          {/* <==========================> --- <==========================> */}
                                          <View style={styles._skip_back_main}>
                                 <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate0("Onboarding")}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate("TopSchools")}>
+                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate("GoalsStep")}>
                                     <Text style={[styles._skip_btn_text, Theme._SkipBtnTextColor]}>Skip</Text>
                                     <Entypo name="chevron-small-right" size={24} color="#4888f8" />
                                 </TouchableOpacity>
@@ -127,7 +151,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     _header_heading_2_main: {
-        width: "15%",
+        width: "22%",
     },
     _line_main: {
         width: "7%",
@@ -144,7 +168,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     _active_heading: {
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontSize:12
     },
     _All_numbers_main: {
         width: 25,
@@ -171,24 +196,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginVertical: 10
     },
-    _no_yes_btn_main: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        width: "40%",
-        alignSelf: "center",
-        marginTop:20
-    },
-    _no_btn: {
-        width: "45%",
-        height: 30,
-        borderRadius: 5,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    _no_btn_text: {
-        fontWeight: 'bold'
-    },
+
     _skip_btn: {
         flexDirection: "row",
         alignItems: "center",
@@ -201,4 +209,17 @@ const styles = StyleSheet.create({
         marginTop: 20,
         justifyContent: "space-between"
     },
+    _continue_btn: {
+        width: "30%",
+        height: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 5,
+        alignSelf: "flex-end",
+        marginTop: 30,
+        marginBottom: 30
+    },
+    _continue_btn_text: {
+        fontWeight: "bold"
+    }
 });

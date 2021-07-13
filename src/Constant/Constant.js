@@ -249,6 +249,12 @@ const styles = {
     },
     _SkipBtnTextColor:{
         color:"#4888f8"
+    },
+    _DoneStaps:{
+        borderColor:"#4888f8"
+    },
+    _DoneStapsLineBg:{
+        backgroundColor:"#4888f8"
     }
 
 }

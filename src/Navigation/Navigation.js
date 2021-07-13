@@ -14,7 +14,10 @@ import {
   DrawerContent,
   EducationNo,
   EducationYes,
-  Mcat
+  Mcat,
+  McatYes,
+  TopSchools,
+  GoalsStep
 } from './../Screens/index';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -49,6 +52,9 @@ function Navigation(props) {
         <Stack.Screen name="EducationNo" component={EducationNo} options={{ headerShown: false }} /> 
         <Stack.Screen name="EducationYes" component={EducationYes} options={{ headerShown: false }} /> 
         <Stack.Screen name="Mcat" component={Mcat} options={{ headerShown: false }} /> 
+        <Stack.Screen name="McatYes" component={McatYes} options={{ headerShown: false }} /> 
+        <Stack.Screen name="TopSchools" component={TopSchools} options={{ headerShown: false }} /> 
+        <Stack.Screen name="GoalsStep" component={GoalsStep} options={{ headerShown: false }} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
