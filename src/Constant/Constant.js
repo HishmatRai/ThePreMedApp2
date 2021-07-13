@@ -226,7 +226,30 @@ const styles = {
     },
 
     _OnboardingGradientFirst: "#3e83ff",
-    _OnboardingGradientSecond: "#53cdfe"
+    _OnboardingGradientSecond: "#53cdfe",
+
+    _OnboardingDataBg: {
+        backgroundColor: "white"
+    },
+
+    _ActiveNumberBg: {
+        backgroundColor: "#3e84ff"
+    },
+    _AllStepsLineBg: {
+        backgroundColor: "#b0b0b0"
+    },
+    _AllStepsNumberBorderColor: {
+        borderColor: "#b0b0b0"
+    },
+    _NoBtnBg:{
+        backgroundColor:"#e2e2e2"
+    },
+    _YesBtnBg:{
+        backgroundColor:"#3e84ff"
+    },
+    _SkipBtnTextColor:{
+        color:"#4888f8"
+    }
 
 }
 

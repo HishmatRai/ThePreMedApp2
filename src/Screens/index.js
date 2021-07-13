@@ -6,7 +6,10 @@ import MyMentor from './MyMentor/MyMentor';
 import Calendar from './Calendar/Calendar';
 import Focus from './Focus/Focus';
 import Onboarding from './Onboarding/Onboarding';
-import DrawerContent from './DrawerContent/DrawerContent'
+import DrawerContent from './DrawerContent/DrawerContent';
+import EducationNo from './Onboarding/EducationNo';
+import EducationYes from './Onboarding/EducationYes';
+import Mcat from './Onboarding/Mcat'
 export {
     Login,
     SignUp,
@@ -16,5 +19,8 @@ export {
     Calendar,
     Focus,
     Onboarding,
-    DrawerContent
+    DrawerContent,
+    EducationNo,
+    EducationYes,
+    Mcat
 }
