@@ -10,7 +10,7 @@ import {
     CheckIcon,
     Link
 } from "native-base"
-export default function GoalsStep(props) {
+export default function Deadline(props) {
     let [language, setLanguage] = React.useState("")
     return (
         <View style={[styles.container, Theme._Container]}>
@@ -56,108 +56,41 @@ export default function GoalsStep(props) {
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
 
                                 <View style={[styles._data_number_main]}>
+                                    <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
+                                        <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                    </View>
+                                </View>
+
+                                <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
+
+                                <View style={[styles._data_number_main]}>
                                     <View style={[[styles._active_number, Theme._ActiveNumberBg]]}>
-                                        <Text style={[styles._active_number_text, Theme._TextWhiteColor]}>4</Text>
+                                        <Text style={[styles._active_number_text, Theme._TextWhiteColor]}>5</Text>
                                     </View>
                                 </View>
                                 <View style={styles._header_heading_2_main}>
-                                    <Text style={[styles._active_heading, Theme._QuestionsTextColor]}>Goals</Text>
-                                </View>
-                                <View style={[styles._line_main, Theme._AllStepsLineBg]}></View>
-                                <View style={[styles._data_number_main]}>
-                                    <View style={[[styles._All_numbers_main, Theme._AllStepsNumberBorderColor]]}>
-                                        <Text style={[styles._active_number_text, Theme._GrayColor]}>5</Text>
-                                    </View>
+                                    <Text style={[styles._active_heading, Theme._QuestionsTextColor]}>Deadline</Text>
                                 </View>
                             </View>
 
                             {/* <==========================> --- <==========================> */}
-                            <AntDesign name="scan1" size={40} color="#23527c" style={styles._scaner_icon} />
+                            <Entypo name="calendar" size={40} color="#23527c" style={styles._scaner_icon} />
 
                             {/* <==========================> --- <==========================> */}
-                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Set Some Goals</Text>
+                            <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Let's Set a Deadline</Text>
+                            <Text style={[styles._sub_heading, Theme._GrayColor]}>When do you plan on submiting your medical school application?</Text>
                             {/* <==========================> --- <==========================> */}
-                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>GPA</Text>
-                            <View style={[styles._input_main, Theme._InputBorderColor]}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="0.0"
-                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
-                                    color={Theme._InputTextColor}
-                                    keyboardType='numeric'
-                                />
-                            </View>
-                            <Text style={[styles._limit, Theme._GrayColor]}>Suggested 3.7 or greater</Text>
+
+
                             {/* <==========================> --- <==========================> */}
-                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>MCAT</Text>
-                            <View style={[styles._input_main, Theme._InputBorderColor]}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="MCAT"
-                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
-                                    color={Theme._InputTextColor}
-                                    keyboardType='numeric'
-                                />
-                            </View>
-                            <Text style={[styles._limit, Theme._GrayColor]}>Suggested 507 or greater</Text>
-                            {/* <==========================> --- <==========================> */}
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Showing</Text>
-                                <Text style={[styles._hours, Theme._GrayColor]}>(Hours)</Text>
-                            </View>
-                            <View style={[styles._input_main, Theme._InputBorderColor]}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="hrs"
-                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
-                                    color={Theme._InputTextColor}
-                                    keyboardType='numeric'
-                                />
-                            </View>
-                            <Text style={[styles._limit, Theme._GrayColor]}>Suggested 50 hours or greater</Text>
-                            {/* <==========================> --- <==========================> */}
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Volunteering</Text>
-                                <Text style={[styles._hours, Theme._GrayColor]}>(Hours)</Text>
-                            </View>
-                            <View style={[styles._input_main, Theme._InputBorderColor]}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="hrs"
-                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
-                                    color={Theme._InputTextColor}
-                                    keyboardType='numeric'
-                                />
-                            </View>
-                            <Text style={[styles._limit, Theme._GrayColor]}>Suggested 150 hours or greater</Text>
-                            {/* <==========================> --- <==========================> */}
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Work and Activities</Text>
-                                <Text style={[styles._hours, Theme._GrayColor]}>Activities</Text>
-                            </View>
-                            <View style={[styles._input_main, Theme._InputBorderColor]}>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Activities"
-                                    placeholderTextColor={Theme._InputPlaceholderTextColor}
-                                    color={Theme._InputTextColor}
-                                    keyboardType='numeric'
-                                />
-                            </View>
-                            <Text style={[styles._limit, Theme._GrayColor]}>Suggested 12-15</Text>
-                            {/* <==========================> --- <==========================> */}
-                            <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("Deadline")}>
-                                <Text style={[styles._continue_btn_text, Theme._TextWhiteColor]}>Continue</Text>
+                            <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("Home")}>
+                                <Text style={[styles._continue_btn_text, Theme._TextWhiteColor]}>Finish</Text>
                             </TouchableOpacity>
                             {/* <==========================> --- <==========================> */}
                             <View style={styles._skip_back_main}>
                                 <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.goBack()}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate("Deadline")}>
-                                    <Text style={[styles._skip_btn_text, Theme._SkipBtnTextColor]}>Skip</Text>
-                                    <Entypo name="chevron-small-right" size={24} color="#4888f8" />
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -201,7 +134,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     _header_heading_2_main: {
-        width: "15%",
+        width: "22%",
     },
     _line_main: {
         width: "7%",
@@ -332,5 +265,9 @@ const styles = StyleSheet.create({
     _limit: {
         alignSelf: "flex-end",
         fontSize: 10
+    },
+    _sub_heading: {
+        textAlign: "center",
+        marginVertical: 20
     }
 });

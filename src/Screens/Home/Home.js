@@ -9,9 +9,11 @@ import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommu
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Theme from './../../Constant/Constant';
 import LinearGradient from 'react-native-linear-gradient';
+import Tooltip from 'react-native-walkthrough-tooltip';
 
 export default function Home(props) {
     const [activeBtn, setActiveBtn] = useState("");
+    const [toolTio, setToolTop] = useState(false)
     let QuestionOption = [
         { option: "A. Nucleases degrade DNAFFF" },
         { option: "B. Nucleases degrade DNAFFF" },
@@ -19,6 +21,7 @@ export default function Home(props) {
         { option: "D. Nucleases degrade DNAFFF" },
         { option: "E. Nucleases degrade DNAFFF" },
     ]
+
     return (
         <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
 
@@ -42,16 +45,23 @@ export default function Home(props) {
                         style={styles._logo}
                     />
                 </View>
-                <View style={styles._notification_main}>
+                <View style={styles._notification_main} >
                     <TouchableOpacity style={styles._chat_btn}>
                         <Ionicons name="chatbubbles-sharp" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._notification_btn}>
+                    <TouchableOpacity style={styles._notification_btn} onPress={()=> setToolTop(true)}>
                         <Ionicons name="notifications" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
                 </View>
-            </View>
 
+            </View>
+            <Tooltip
+                isVisible={toolTio}
+                content={<Text>Check this outrwermr e rwerre wer we rwer wer wer wer w er wer wer wer werwe!</Text>}
+                placement="top"
+                onClose={() => setToolTop(false)}
+            >
+            </Tooltip>
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}

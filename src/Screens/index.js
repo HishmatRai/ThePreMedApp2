@@ -12,7 +12,9 @@ import EducationYes from './Onboarding/EducationYes';
 import Mcat from './Onboarding/Mcat';
 import McatYes from './Onboarding/McatYes';
 import TopSchools from './Onboarding/TopSchools';
-import GoalsStep from './Onboarding/GoalsStep'
+import GoalsStep from './Onboarding/GoalsStep';
+import Deadline from './Onboarding/Deadline';
+import Settings from './Settings/Settings'
 export {
     Login,
     SignUp,
@@ -28,5 +30,7 @@ export {
     Mcat,
     McatYes,
     TopSchools,
-    GoalsStep
+    GoalsStep,
+    Deadline,
+    Settings
 }

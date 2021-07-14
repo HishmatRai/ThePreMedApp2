@@ -60,7 +60,7 @@ export default function CustomDrawerContent(props) {
             fontSize: 18,
             color: Theme._DrawerScreenTitleColor,
           }}
-         
+         onPress={()=> props.navigation.navigate("Settings")}
         />
 
         <DrawerItem
