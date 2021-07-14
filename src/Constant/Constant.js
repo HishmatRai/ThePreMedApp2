@@ -255,7 +255,16 @@ const styles = {
     },
     _DoneStapsLineBg:{
         backgroundColor:"#4888f8"
-    }
+    },
+    _ToggleOnBg:"#3e82fd",
+    _ToggleOffBg:"gray",
+    _ToggleBorderColor:"#3e82fd",
+_settingDataBottomBorderColor:{
+    borderBottomColor:"ebebeb"
+},
+_settingDataTopBorderColor:{
+    borderTopColor:"ebebeb"
+}
 
 }
 

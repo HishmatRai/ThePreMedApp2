@@ -57,7 +57,7 @@ export default function Home(props) {
             </View>
             <Tooltip
                 isVisible={toolTio}
-                content={<Text>Check this outrwermr e rwerre wer we rwer wer wer wer w er wer wer wer werwe!</Text>}
+                content={<Text >Check this outrwermr e rwerre wer we rwer wer wer wer w er wer wer wer werwe!</Text>}
                 placement="top"
                 onClose={() => setToolTop(false)}
             >
