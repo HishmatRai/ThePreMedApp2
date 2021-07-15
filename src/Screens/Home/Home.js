@@ -46,7 +46,7 @@ export default function Home(props) {
                     />
                 </View>
                 <View style={styles._notification_main} >
-                    <TouchableOpacity style={styles._chat_btn}>
+                    <TouchableOpacity style={styles._chat_btn} onPress={()=>props.navigation.navigate("Messages")}>
                         <Ionicons name="chatbubbles-sharp" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._notification_btn} onPress={()=> setToolTop(true)}>

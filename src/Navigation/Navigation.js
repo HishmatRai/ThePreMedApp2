@@ -19,7 +19,8 @@ import {
   TopSchools,
   GoalsStep,
   Deadline,
-  Settings
+  Settings,
+  Messages
 } from './../Screens/index';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,7 +45,7 @@ function Navigation(props) {
     <NavigationContainer>
       <Stack.Navigator>
 
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} /> 
         <Stack.Screen
           name="Home"
@@ -58,7 +59,8 @@ function Navigation(props) {
         <Stack.Screen name="TopSchools" component={TopSchools} options={{ headerShown: false }} /> 
         <Stack.Screen name="GoalsStep" component={GoalsStep} options={{ headerShown: false }} /> 
         <Stack.Screen name="Deadline" component={Deadline} options={{ headerShown: false }} /> 
-        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} /> 
+        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />  */}
+        <Stack.Screen name="Messages" component={Messages} options={{ headerShown: false }} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
