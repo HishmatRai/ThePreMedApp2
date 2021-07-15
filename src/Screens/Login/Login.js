@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput,Linking } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
@@ -81,7 +81,7 @@ export default function Login(props) {
                             </TouchableOpacity>
                             <Text style={[styles._remember_text, Theme._GrayColor]}>Remember Me</Text>
                         </View>
-                        <TouchableOpacity>
+                        <TouchableOpacity  onPress={() => Linking.openURL('https://www.motivatemd.com/app-log-in/?action=forgot_password')}>
                             <Text style={[styles._forgot_password_btn_txt, Theme._HeadingColorBlue]}>
                                 Forgot password?
                             </Text>

@@ -1,47 +1,15 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Share, TextInput } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, TouchableOpacity, TextInput } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
-import ToggleSwitch from "toggle-switch-react-native";
-import DropDownPicker from "react-native-dropdown-picker";
-import { backgroundColor } from 'styled-system';
+import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import {
     Select,
-    VStack,
     CheckIcon,
-    Center,
-    NativeBaseProvider,
 } from "native-base";
-const onShare = async () => {
-    try {
-        const result = await Share.share({
-            message:
-                'React Native | A framework for building native apps using React',
-        });
-        if (result.action === Share.sharedAction) {
-            if (result.activityType) {
-                // shared with activity type of result.activityType
-            } else {
-                // shared
-            }
-        } else if (result.action === Share.dismissedAction) {
-            // dismissed
-        }
-    } catch (error) {
-        alert(error.message);
-    }
-}
 export default function Messages(props) {
-    const [toggle, setToggle] = useState(false);
-    const [toggle2, setToggle2] = useState(false);
-    const [toggle3, setToggle3] = useState(false);
-    const [toggle4, setToggle4] = useState(false);
-    const [toggle5, setToggle5] = useState(false);
-    const [toggle6, setToggle6] = useState(false);
-    const [toggle7, setToggle7] = useState(false);
     const [tags, onChangeTags] = React.useState("");
     let [dropdownValue, setDropdownValue] = React.useState("Inbox")
     let Time = [
@@ -53,16 +21,13 @@ export default function Messages(props) {
         { label: "Important", value: "Important" },
 
     ]
-    const  AddTags = () => {
-        // // let AllTags = [];
-        // // tags.push(AllTags);
-        // console.log(tags);
-        // tags = "";
+    const AddTags = () => {
+
 
     }
     return (
 
-        <View style={[styles.container, Theme._HomePageContainer]}>
+        <View style={[styles.container, Theme._HeaderBg]}>
             {/* <==========================> --- <==========================> */}
             <StatusBar
                 barStyle="white"
@@ -71,11 +36,16 @@ export default function Messages(props) {
                 translucent={true}
             />
             {/* <==========================> --- <==========================> */}
-            <View style={styles._header_main}>
-                <TouchableOpacity style={styles._back_icon}>
-                    <Ionicons name="arrow-back" size={25} color="#2b2b2b" />
+            <View style={[styles._header_main, Theme._HeaderBg]}>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.goBack()}>
+                        <Ionicons name="arrow-back" size={25} color="#2b2b2b" />
+                    </TouchableOpacity>
+                    <Text style={[styles._header_heading, Theme._QuestionsTextColor]}>Message</Text>
+                </View>
+                <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.navigate("Search")}>
+                    <AntDesign name="search1" size={25} color="#2b2b2b" />
                 </TouchableOpacity>
-                <Text style={[styles._header_heading, Theme._QuestionsTextColor]}>Message</Text>
             </View>
 
             {/* <==========================> --- <==========================> */}
@@ -110,9 +80,9 @@ export default function Messages(props) {
                     <View style={{ alignSelf: "center", justifyContent: "center", flex: 1 }}>
                         <Text style={styles._no_message}>No Message to show</Text>
                     </View>
-                    <TouchableOpacity style={styles._edit_btn2}>
+                    <TouchableOpacity style={styles._edit_btn2} onPress={()=> props.navigation.navigate("Compose")}>
                         <LinearGradient colors={[Theme._LinearGradientFirst, Theme._LinearGradientSecond]} style={styles._edit_btn} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
-                            <MaterialIcons name="edit" size={25} color="#2b2b2b" />
+                            <MaterialIcons name="edit" size={25} color="white" />
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
@@ -133,19 +103,39 @@ export default function Messages(props) {
                 : null}
 
             {dropdownValue === "Tags" ?
-                <View style={styles._add_tags_main}>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChangeTags}
-                        value={tags}
-                        placeholder="Create new tags"
-                        placeholderTextColor={Theme._InputPlaceholderTextColor}
-                        color={Theme._InputTextColor}
-                    />
-                    <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]} onPress={()=> AddTags()}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
-                    </TouchableOpacity>
+                <>
+                    <View style={[styles._add_tags_main, Theme._HomePageContainer]}>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeTags}
+                            value={tags}
+                            placeholder="Create new tags"
+                            placeholderTextColor={Theme._InputPlaceholderTextColor}
+                            color={Theme._InputTextColor}
+                        />
+                        <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]} onPress={() => AddTags()}>
+                            <MaterialIcons name="add" size={25} color="white" />
+                            <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles._show_tags_main}>
+                        <Ionicons name="ios-pricetags-outline" size={20} color="#2b2b2b" />
+                        <Text style={[styles._tags, Theme._QuestionsTextColor]}>G</Text>
+                    </View>
+                </>
+                : null}
+            {dropdownValue === "Trash" ?
+                <View style={{ flex: 1 }}>
+                    <View style={{ alignSelf: "center", justifyContent: "center", flex: 1 }}>
+                        <Text style={styles._no_message}>No Message to show</Text>
+                    </View>
+                </View>
+                : null}
+            {dropdownValue === "Important" ?
+                <View style={{ flex: 1 }}>
+                    <View style={{ alignSelf: "center", justifyContent: "center", flex: 1 }}>
+                        <Text style={styles._no_message}>No Message to show</Text>
+                    </View>
                 </View>
                 : null}
         </View>
@@ -158,12 +148,13 @@ const styles = StyleSheet.create({
     _main: {
     },
     _header_main: {
-        marginTop: 30,
-        marginHorizontal: 20,
+        marginTop: 20,
+        paddingHorizontal: 20,
         flexDirection: "row",
         alignItems: "center",
-        height: 40,
-
+        height: 60,
+        elevation: 0.8,
+        justifyContent: "space-between"
     },
     _back_icon: {
         width: 30,
@@ -179,7 +170,6 @@ const styles = StyleSheet.create({
     _dropdwon_main: {
         width: "40%",
         margin: 20,
-        borderWidth: 1
     },
     _edit_btn: {
         width: 50,
@@ -200,9 +190,10 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     _add_tags_main: {
-        marginHorizontal: 20,
+        paddingHorizontal: 20,
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        paddingVertical: 10
 
     },
     input: {
@@ -225,4 +216,13 @@ const styles = StyleSheet.create({
         fontSize: 18,
         letterSpacing: 1
     },
+    _show_tags_main: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginTop: 20,
+        marginHorizontal: 20
+    },
+    _tags: {
+        marginLeft: 10
+    }
 });

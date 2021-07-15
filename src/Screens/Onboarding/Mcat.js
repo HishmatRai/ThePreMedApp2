@@ -29,7 +29,7 @@ export default function Mcat(props) {
                             <View style={styles._data_header_main}>
                                 <View style={[styles._data_number_main]}>
                                     <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
-                                    <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                        <Ionicons name="checkmark" size={20} color="#4888f8" />
                                     </View>
                                 </View>
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
@@ -66,7 +66,7 @@ export default function Mcat(props) {
                             />
                             <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Have you taken the MCAT?</Text>
                             <View style={styles._no_yes_btn_main}>
-                                <TouchableOpacity style={[styles._no_btn, Theme._NoBtnBg]} >
+                                <TouchableOpacity style={[styles._no_btn, Theme._NoBtnBg]} onPress={() => props.navigation.navigate("McatNo")}>
                                     <Text style={[styles._no_btn_text, Theme._GrayColor]}>No</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={[styles._no_btn, Theme._YesBtnBg]} onPress={() => props.navigation.navigate("McatYes")}>
@@ -74,9 +74,9 @@ export default function Mcat(props) {
                                 </TouchableOpacity>
                             </View>
 
-                                         {/* <==========================> --- <==========================> */}
-                                         <View style={styles._skip_back_main}>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate0("Onboarding")}>
+                            {/* <==========================> --- <==========================> */}
+                            <View style={styles._skip_back_main}>
+                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.goBack("Onboarding")}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
                                 </TouchableOpacity>
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         width: "40%",
         alignSelf: "center",
-        marginTop:20
+        marginTop: 20
     },
     _no_btn: {
         width: "45%",

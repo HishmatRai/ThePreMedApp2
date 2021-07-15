@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Image, StatusBar, Text, TouchableOpacity,Linking  } from "react-native";
+import { View, StatusBar, Text, TouchableOpacity,Linking  } from "react-native";
 import {
   DrawerContentScrollView,
-  DrawerItemList,
   DrawerItem,
 } from "@react-navigation/drawer";
 import Feather from 'react-native-vector-icons/dist/Feather';
@@ -10,7 +9,6 @@ import Theme from './../../Constant/Constant';
 import styles from "./styles";
 import { Drawer } from "react-native-paper";
 import LinearGradient from 'react-native-linear-gradient';
-import { Link, Center, NativeBaseProvider } from "native-base"
 export default function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>

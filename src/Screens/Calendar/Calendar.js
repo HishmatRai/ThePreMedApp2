@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
@@ -9,7 +9,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommu
 import Theme from './../../Constant/Constant';
 import CalendarPicker from './../../Components/Calendar/Calendar';
 import Fontisto from 'react-native-vector-icons/dist/Fontisto';
+import Tooltip from 'react-native-walkthrough-tooltip';
 export default function Calendar(props) {
+    const [toolTio, setToolTop] = useState(false)
+
     return (
         <View style={[styles._HomePageContainer, Theme._CalendarPageContainer]}>
 
@@ -34,15 +37,33 @@ export default function Calendar(props) {
                     />
                 </View>
                 <View style={styles._notification_main}>
-                    <TouchableOpacity style={styles._chat_btn}>
+                    <TouchableOpacity style={styles._chat_btn} onPress={() => props.navigation.navigate("Messages")}>
                         <Ionicons name="chatbubbles-sharp" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._notification_btn}>
+                    <TouchableOpacity style={styles._notification_btn} onPress={() => setToolTop(true)}>
                         <Ionicons name="notifications" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
                 </View>
             </View>
-
+      {/* <==========================> --- <==========================> */}
+      <Tooltip
+                isVisible={toolTio}
+                showChildInTooltip={true}
+                accessible={true}
+                allowChildInteraction={true}
+                content={
+                    <View style={styles._notification_show_main}>
+                        <Text style={[styles._confirm_activity, Theme._QuestionsTextColor]}>Confirm your Activity</Text>
+                        <Text style={[styles._welcome_back, Theme._QuestionsTextColor]}>Welcome Back !</Text>
+                        <Text style={[styles._message, Theme._QuestionsTextColor]}>looks like you've been busy,Are these complete?</Text>
+                        <View style={[styles._line, Theme._AllStepsLineBg]}></View>
+                        <Text style={[styles._no_notification, Theme._QuestionsTextColor]}>No notifications for now!</Text>
+                    </View>
+                }
+                placement="top"
+                onClose={() => setToolTop(false)}
+            >
+            </Tooltip>
             {/* <==========================> --- <==========================> */}
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* <==========================> --- <==========================> */}
@@ -181,5 +202,23 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         marginTop: 50
+    },
+    _notification_show_main: {
+        width: "100%",
+        // height:200,
+        padding: 10
+    },
+    _confirm_activity: {
+        fontWeight: "bold",
+        fontSize: 18
+    },
+    _line: {
+        width: "100%",
+        height: 2,
+        marginVertical: 5
+    },
+    _no_notification: {
+        fontWeight: "bold",
+        textAlign: "center",
     }
 });

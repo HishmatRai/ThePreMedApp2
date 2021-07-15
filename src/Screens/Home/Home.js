@@ -46,10 +46,10 @@ export default function Home(props) {
                     />
                 </View>
                 <View style={styles._notification_main} >
-                    <TouchableOpacity style={styles._chat_btn} onPress={()=>props.navigation.navigate("Messages")}>
+                    <TouchableOpacity style={styles._chat_btn} onPress={() => props.navigation.navigate("Messages")}>
                         <Ionicons name="chatbubbles-sharp" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._notification_btn} onPress={()=> setToolTop(true)}>
+                    <TouchableOpacity style={styles._notification_btn} onPress={() => setToolTop(true)}>
                         <Ionicons name="notifications" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
                 </View>
@@ -57,7 +57,18 @@ export default function Home(props) {
             </View>
             <Tooltip
                 isVisible={toolTio}
-                content={<Text >Check this outrwermr e rwerre wer we rwer wer wer wer w er wer wer wer werwe!</Text>}
+                showChildInTooltip={true}
+                accessible={true}
+                allowChildInteraction={true}
+                content={
+                    <View style={styles._notification_show_main}>
+                        <Text style={[styles._confirm_activity, Theme._QuestionsTextColor]}>Confirm your Activity</Text>
+                        <Text style={[styles._welcome_back, Theme._QuestionsTextColor]}>Welcome Back !</Text>
+                        <Text style={[styles._message, Theme._QuestionsTextColor]}>looks like you've been busy,Are these complete?</Text>
+                        <View style={[styles._line, Theme._AllStepsLineBg]}></View>
+                        <Text style={[styles._no_notification, Theme._QuestionsTextColor]}>No notifications for now!</Text>
+                    </View>
+                }
                 placement="top"
                 onClose={() => setToolTop(false)}
             >
@@ -104,7 +115,7 @@ export default function Home(props) {
                         <Text style={[styles._focus_target_sub_heading, Theme._GrayColor]}>No focus targets set for today.</Text>
                     </View>
 
-                    <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]}>
+                    <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]} onPress={()=> props.navigation.navigate("Focus")}>
                         <MaterialIcons name="add" size={25} color="white" />
                         <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
                     </TouchableOpacity>
@@ -364,5 +375,23 @@ const styles = StyleSheet.create({
     },
     _submit_btn_text: {
         letterSpacing: 0.5
+    },
+    _notification_show_main: {
+        width: "100%",
+        // height:200,
+        padding: 10
+    },
+    _confirm_activity: {
+        fontWeight: "bold",
+        fontSize: 18
+    },
+    _line: {
+        width: "100%",
+        height: 2,
+        marginVertical: 5
+    },
+    _no_notification: {
+        fontWeight: "bold",
+        textAlign: "center",
     }
 });

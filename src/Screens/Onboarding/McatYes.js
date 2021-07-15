@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput, Platform } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
-import {
-    Select,
-    CheckIcon,
-    Link
-} from "native-base"
+import DateTimePicker from '@react-native-community/datetimepicker';
 export default function McatYes(props) {
-    let [language, setLanguage] = React.useState("")
+    const [date, setDate] = useState(new Date(1598051730000));
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false);
+
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+    };
+
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+    };
+
+    const showDatepicker = () => {
+        showMode('date');
+    };
+
+    const showTimepicker = () => {
+        showMode('time');
+    };
     return (
         <View style={[styles.container, Theme._Container]}>
 
@@ -38,7 +54,7 @@ export default function McatYes(props) {
                             <View style={styles._data_header_main}>
                                 <View style={[styles._data_number_main]}>
                                     <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
-                                    <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                        <Ionicons name="checkmark" size={20} color="#4888f8" />
                                     </View>
                                 </View>
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
@@ -90,8 +106,8 @@ export default function McatYes(props) {
                                 />
                             </View>
 
-                              {/* <==========================> --- <==========================> */}
-                              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Biological and Biochemical Foundations of Living Systems</Text>
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Biological and Biochemical Foundations of Living Systems</Text>
                             <View style={[styles._input_main, Theme._InputBorderColor]}>
                                 <TextInput
                                     style={styles.input}
@@ -102,8 +118,8 @@ export default function McatYes(props) {
                                 />
                             </View>
 
-                                     {/* <==========================> --- <==========================> */}
-                                     <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Critical Analysis and Reasoning Skills</Text>
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Critical Analysis and Reasoning Skills</Text>
                             <View style={[styles._input_main, Theme._InputBorderColor]}>
                                 <TextInput
                                     style={styles.input}
@@ -114,8 +130,8 @@ export default function McatYes(props) {
                                 />
                             </View>
 
-                                   {/* <==========================> --- <==========================> */}
-                                   <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Physical, Social, and Biological Foundation of Behavior</Text>
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Physical, Social, and Biological Foundation of Behavior</Text>
                             <View style={[styles._input_main, Theme._InputBorderColor]}>
                                 <TextInput
                                     style={styles.input}
@@ -126,19 +142,26 @@ export default function McatYes(props) {
                                 />
                             </View>
 
-                                          {/* <==========================> --- <==========================> */}
-              <Text style={[styles.Overall, Theme._QuestionsTextColor]}>Overall Total MCAT Score: 0</Text>
-              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Test Date</Text>
-              <View style={[styles._input_main, Theme._InputBorderColor]}>
-                <TextInput
-                  style={styles.input}
-                  placeholder="0"
-                  placeholderTextColor={Theme._InputPlaceholderTextColor}
-                  color={Theme._InputTextColor}
-                  keyboardType='numeric'
-                />
-                
-              </View>
+                            {/* <==========================> --- <==========================> */}
+                            <Text style={[styles.Overall, Theme._QuestionsTextColor]}>Overall Total MCAT Score: 0</Text>
+                            <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Test Date</Text>
+                            <View style={[styles._input_main, Theme._InputBorderColor]}>
+
+                                <TouchableOpacity onPress={() => showDatepicker()} style={styles._data_picker}>
+                                    <Text>07/18/2021</Text>
+                                    <Entypo name="calendar" size={24} color={Theme._DatePickerIconColor} />
+                                </TouchableOpacity>
+                            </View>
+                            {show && (
+                                <DateTimePicker
+                                    testID="dateTimePicker"
+                                    value={date}
+                                    mode={mode}
+                                    is24Hour={true}
+                                    display="default"
+                                    onChange={onChange}
+                                />
+                            )}
 
                             {/* <==========================> --- <==========================> */}
                             <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("TopSchools")}>
@@ -314,5 +337,12 @@ const styles = StyleSheet.create({
     },
     _continue_btn_text: {
         fontWeight: "bold"
+    },
+    _data_picker: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        height: 50
     }
 });

@@ -133,7 +133,7 @@ export default function Goals(props) {
                   <Fontisto name="doctor" size={20} color="white" />
                 </TouchableOpacity>
                 <View style={styles._update_btns_main}>
-                  <TouchableOpacity style={[styles._Graduated_btn, Theme._GraduatedBtnBg]}>
+                  <TouchableOpacity style={[styles._Graduated_btn, Theme._GraduatedBtnBg]} onPress={() => this.RBSheet.open()}>
                     <Text style={[styles._Graduated_btn_text, Theme._QuestionsTextColor]}>Graduated</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={[styles._Graduated_btn, Theme._HomeSubmitBtnBg]}>
@@ -196,8 +196,8 @@ export default function Goals(props) {
                 />
               </View>
 
-                 {/* <==========================> --- <==========================> */}
-                 <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Critical Analysis and Reasoning Skills</Text>
+              {/* <==========================> --- <==========================> */}
+              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Critical Analysis and Reasoning Skills</Text>
               <View style={[styles._input_main, Theme._InputBorderColor]}>
                 <TextInput
                   style={styles.input}
@@ -210,8 +210,8 @@ export default function Goals(props) {
                 />
               </View>
 
-    {/* <==========================> --- <==========================> */}
-    <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Physical, Social, and Biological Foundation of Behavior</Text>
+              {/* <==========================> --- <==========================> */}
+              <Text style={[styles._accourdian_input_title, Theme._QuestionsTextColor]}>Physical, Social, and Biological Foundation of Behavior</Text>
               <View style={[styles._input_main, Theme._InputBorderColor]}>
                 <TextInput
                   style={styles.input}
@@ -236,7 +236,7 @@ export default function Goals(props) {
                   color={Theme._InputTextColor}
                   keyboardType='numeric'
                 />
-                
+
               </View>
 
               {/* <==========================> --- <==========================> */}
@@ -244,11 +244,11 @@ export default function Goals(props) {
                 <TouchableOpacity style={[styles._doctor_btn, Theme._HomeSubmitBtnBg]}>
                   <Fontisto name="doctor" size={20} color="white" />
                 </TouchableOpacity>
-          
-                  <TouchableOpacity style={[styles._Graduated_btn, Theme._HomeSubmitBtnBg]}>
-                    <Text style={[styles._Graduated_btn_text, Theme._TextWhiteColor]}>Update</Text>
-                  </TouchableOpacity>
-          
+
+                <TouchableOpacity style={[styles._Graduated_btn, Theme._HomeSubmitBtnBg]}>
+                  <Text style={[styles._Graduated_btn_text, Theme._TextWhiteColor]}>Update</Text>
+                </TouchableOpacity>
+
               </View>
             </View>
           </Accordion.Details>
@@ -277,31 +277,31 @@ export default function Goals(props) {
           </Accordion.Summary>
           <Accordion.Details>
             <View >
-    {/* <==========================> --- <==========================> */}
-    <View style={styles._add_event}>
-    <TouchableOpacity style={[styles._add_btn2, Theme._HomeAddBtnBg]}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Event</Text>
-                    </TouchableOpacity>
-    </View>
+              {/* <==========================> --- <==========================> */}
+              <View style={styles._add_event}>
+                <TouchableOpacity style={[styles._add_btn2, Theme._HomeAddBtnBg]}>
+                  <MaterialIcons name="add" size={25} color="white" />
+                  <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Event</Text>
+                </TouchableOpacity>
+              </View>
               <View style={styles._update_main}>
                 <TouchableOpacity style={[styles._doctor_btn, Theme._HomeSubmitBtnBg]}>
                   <Fontisto name="doctor" size={20} color="white" />
                 </TouchableOpacity>
-          
+
                 <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Log</Text>
-                    </TouchableOpacity>
-          
+                  <MaterialIcons name="add" size={25} color="white" />
+                  <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Log</Text>
+                </TouchableOpacity>
+
               </View>
             </View>
           </Accordion.Details>
         </Accordion.Item>
       </Accordion>
 
-       {/* <==========================> --- <==========================> */}
-       <View style={styles._edit_main}>
+      {/* <==========================> --- <==========================> */}
+      <View style={styles._edit_main}>
         <Text style={[styles._heading, Theme._QuestionsTextColor]}>Volunteering: </Text>
         <Text style={[styles._title, Theme._GrayColor]}>0 Hours</Text>
         {!isActive4 && activeIndex4 === 3 &&
@@ -322,31 +322,31 @@ export default function Goals(props) {
           </Accordion.Summary>
           <Accordion.Details>
             <View >
-    {/* <==========================> --- <==========================> */}
-    <View style={styles._add_event}>
-    <TouchableOpacity style={[styles._add_btn2, Theme._HomeAddBtnBg]}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Event</Text>
-                    </TouchableOpacity>
-    </View>
+              {/* <==========================> --- <==========================> */}
+              <View style={styles._add_event}>
+                <TouchableOpacity style={[styles._add_btn2, Theme._HomeAddBtnBg]}>
+                  <MaterialIcons name="add" size={25} color="white" />
+                  <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Event</Text>
+                </TouchableOpacity>
+              </View>
               <View style={styles._update_main}>
                 <TouchableOpacity style={[styles._doctor_btn, Theme._HomeSubmitBtnBg]}>
                   <Fontisto name="doctor" size={20} color="white" />
                 </TouchableOpacity>
-          
+
                 <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Log</Text>
-                    </TouchableOpacity>
-          
+                  <MaterialIcons name="add" size={25} color="white" />
+                  <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add Log</Text>
+                </TouchableOpacity>
+
               </View>
             </View>
           </Accordion.Details>
         </Accordion.Item>
       </Accordion>
 
-       {/* <==========================> --- <==========================> */}
-       <View style={styles._edit_main}>
+      {/* <==========================> --- <==========================> */}
+      <View style={styles._edit_main}>
         <Text style={[styles._heading, Theme._QuestionsTextColor]}>Work & Activities: </Text>
         <Text style={[styles._title, Theme._GrayColor]}>0 Activities</Text>
         {!isActive5 && activeIndex5 === 4 &&
@@ -367,27 +367,71 @@ export default function Goals(props) {
           </Accordion.Summary>
           <Accordion.Details>
             <View >
-    {/* <==========================> --- <==========================> */}
-    <View style={styles._add_event}>
-<TouchableOpacity style={styles._up_icons}>
-<FontAwesome5 name="sort-amount-up-alt" size={25} color="gray" />
-</TouchableOpacity>
-    </View>
+              {/* <==========================> --- <==========================> */}
+              <View style={styles._add_event}>
+                <TouchableOpacity style={styles._up_icons}>
+                  <FontAwesome5 name="sort-amount-up-alt" size={25} color="gray" />
+                </TouchableOpacity>
+              </View>
               <View style={styles._update_main}>
                 <TouchableOpacity style={[styles._doctor_btn, Theme._HomeSubmitBtnBg]}>
                   <Fontisto name="doctor" size={20} color="white" />
                 </TouchableOpacity>
-          
+
                 <TouchableOpacity style={[styles._add_btn, Theme._HomeAddBtnBg]}>
-                        <MaterialIcons name="add" size={25} color="white" />
-                        <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
-                    </TouchableOpacity>
-          
+                  <MaterialIcons name="add" size={25} color="white" />
+                  <Text style={[styles._add_btn_text, Theme._TextWhiteColor]}>Add</Text>
+                </TouchableOpacity>
+
               </View>
             </View>
           </Accordion.Details>
         </Accordion.Item>
       </Accordion>
+      <RBSheet
+        ref={ref => {
+          this.RBSheet = ref;
+        }}
+        height={170}
+        openDuration={250}
+        customStyles={{
+          container: {
+            justifyContent: "center",
+            alignItems: "center"
+          }
+        }}
+      >
+        <View style={styles._bottomsheet_main}>
+          <Text style={[styles._bottomsheet__main_heaidng, Theme._QuestionsTextColor]}>Update Your Degree</Text>
+          {/* <==========================> --- <==========================> */}
+          <Text style={[Theme._QuestionsTextColor]}>Degree</Text>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+            <View style={[styles._input_main2, Theme._InputBorderColor]}>
+              <TextInput
+                style={styles.input2}
+                placeholder="Degree"
+                placeholderTextColor={Theme._InputPlaceholderTextColor}
+                color={Theme._InputTextColor}
+              />
+            </View>
+            <TouchableOpacity style={[styles._add_btn3, Theme._HomeAddBtnBg]}>
+              <MaterialIcons name="add" size={25} color="white" />
+            </TouchableOpacity>
+          </View>
+          {/* <==========================> --- <==========================> */}
+          <View style={styles._update_main2}>
+            <View style={styles._update_btns_main}>
+              <TouchableOpacity style={[styles._Graduated_btn, Theme._GraduatedBtnBg]} onPress={() => this.RBSheet.close()}>
+                <Text style={[styles._Graduated_btn_text, Theme._QuestionsTextColor]}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles._Graduated_btn, Theme._HomeSubmitBtnBg]}>
+                <Text style={[styles._Graduated_btn_text, Theme._TextWhiteColor]}>Update</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </RBSheet>
+
     </View>
   );
 }
@@ -408,10 +452,10 @@ const styles = StyleSheet.create({
   _title: {
     fontWeight: "bold"
   },
-  HoursLeft:{
+  HoursLeft: {
     fontWeight: "bold",
-    alignSelf:"flex-end",
-    marginTop:5
+    alignSelf: "flex-end",
+    marginTop: 5
   },
   _input_main: {
     flexDirection: "row",
@@ -423,8 +467,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 0
   },
+  _input_main2: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 5,
+    justifyContent: "space-between",
+    borderWidth: 1,
+    marginTop: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 0,
+    height: 40,
+  },
   input: {
     width: "100%",
+    letterSpacing: 1
+  },
+  input2: {
+    width: "80%",
     letterSpacing: 1
   },
   _accourdian_input_title: {
@@ -444,6 +503,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between"
+  },
+  _update_main2: {
+    marginTop: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    alignSelf: "flex-end"
   },
   _doctor_btn: {
     width: 40,
@@ -482,10 +548,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 10
   },
-  Overall:{
-    marginTop:20,
-    fontWeight:"bold",
-    fontSize:18
+  Overall: {
+    marginTop: 20,
+    fontWeight: "bold",
+    fontSize: 18
   },
   _add_btn: {
     flexDirection: "row",
@@ -495,23 +561,40 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 40,
     paddingHorizontal: 15
-},
-_add_btn2: {
-  flexDirection: "row",
-  alignItems: "center",
-  width: "50%",
-  justifyContent: "space-between",
-  borderRadius: 5,
-  height: 40,
-  paddingHorizontal: 15,
-  marginVertical:20
-},
-_add_btn_text: {
+  },
+  _add_btn3: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "15%",
+    justifyContent: "space-between",
+    borderRadius: 5,
+    height: 40,
+    justifyContent: "center",
+    marginTop: 5,
+  },
+  _add_btn2: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "50%",
+    justifyContent: "space-between",
+    borderRadius: 5,
+    height: 40,
+    paddingHorizontal: 15,
+    marginVertical: 20
+  },
+  _add_btn_text: {
     fontWeight: "bold",
     fontSize: 18,
     letterSpacing: 1
-},
-_up_icons:{
-  marginVertical:20
-}
+  },
+  _up_icons: {
+    marginVertical: 20
+  },
+  _bottomsheet_main: {
+    paddingHorizontal: 10,
+  },
+  _bottomsheet__main_heaidng: {
+    fontWeight: 'bold',
+    marginBottom: 10
+  }
 });

@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
-import {
-    Select,
-    CheckIcon,
-    Link
-} from "native-base"
 export default function GoalsStep(props) {
-    let [language, setLanguage] = React.useState("")
     return (
         <View style={[styles.container, Theme._Container]}>
 
@@ -151,7 +145,7 @@ export default function GoalsStep(props) {
                             </TouchableOpacity>
                             {/* <==========================> --- <==========================> */}
                             <View style={styles._skip_back_main}>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.goBack()}>
+                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate("TopSchools")}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
                                 </TouchableOpacity>

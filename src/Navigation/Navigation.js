@@ -20,7 +20,10 @@ import {
   GoalsStep,
   Deadline,
   Settings,
-  Messages
+  Messages,
+  McatNo,
+  Search,
+  Compose
 } from './../Screens/index';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -31,12 +34,12 @@ function HomeDrawer() {
       initialRouteName="Home"
       drawerContent={(props) => <DrawerContent {...props} />}
     >
-      <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      {/* <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }} /> */}
       <Stack.Screen name="Progress" component={Progress} options={{ headerShown: false }} />
       <Stack.Screen name="MyMentor" component={MyMentor} options={{ headerShown: false }} />
       <Stack.Screen name="Calendar" component={Calendar} options={{ headerShown: false }} />
       <Stack.Screen name="Focus" component={Focus} options={{ headerShown: false }} />
-      <Drawer.Screen name="Onboarding" component={Onboarding} />
+  
     </Drawer.Navigator>
   );
 }
@@ -46,7 +49,7 @@ function Navigation(props) {
       <Stack.Navigator>
 
         {/* <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} /> 
+        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />  */}
         <Stack.Screen
           name="Home"
           component={HomeDrawer}
@@ -59,8 +62,12 @@ function Navigation(props) {
         <Stack.Screen name="TopSchools" component={TopSchools} options={{ headerShown: false }} /> 
         <Stack.Screen name="GoalsStep" component={GoalsStep} options={{ headerShown: false }} /> 
         <Stack.Screen name="Deadline" component={Deadline} options={{ headerShown: false }} /> 
-        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />  */}
+        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} /> 
         <Stack.Screen name="Messages" component={Messages} options={{ headerShown: false }} /> 
+        <Drawer.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }}/>
+        <Drawer.Screen name="McatNo" component={McatNo} options={{ headerShown: false }}/>
+        <Drawer.Screen name="Search" component={Search} options={{ headerShown: false }}/>
+        <Drawer.Screen name="Compose" component={Compose} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

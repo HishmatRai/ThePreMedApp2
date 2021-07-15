@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, TextInput, Linking } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
-import Fontisto from 'react-native-vector-icons/dist/Fontisto';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {
     Select,
     CheckIcon,
-    Link
 } from "native-base"
 export default function SignUp(props) {
     const [firstName, onChangeFirstName] = React.useState("");
@@ -170,25 +168,23 @@ export default function SignUp(props) {
                                 )}
                             </TouchableOpacity>
                             <Text style={[styles._remember_text, Theme._GrayColor]}>I agree to the PreMed App </Text>
-                            <TouchableOpacity>
-                                {/* <Link mt={4} href="https://nativebase.io"> */}
+                            <TouchableOpacity onPress={() => Linking.openURL('https://www.motivatemd.com/terms-and-conditions-2/')}>
                                 <Text style={[styles._forgot_password_btn_txt, Theme._HeadingColorBlue]}>
                                     Terms of Services
                                 </Text>
-                                {/* </Link> */}
                             </TouchableOpacity>
                         </View>
                     </View>
                     <View style={styles._remember_and_forgot_password_main2}>
                         <Text style={[styles._remember_text, Theme._GrayColor]}>& </Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.motivatemd.com/privacy/')}>
                             <Text style={[styles._forgot_password_btn_txt, Theme._HeadingColorBlue]}>
                                 Privacy Policy
                             </Text>
                         </TouchableOpacity>
                     </View>
                     {/* <==========================> --- <==========================> */}
-                    <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("SignUp")}>
+                    <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("Onboarding")}>
                         <LinearGradient colors={[Theme._LinearGradientFirst, Theme._LinearGradientSecond]} style={styles._login_btn} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
                             <Text style={[styles._login_btn_text, Theme._TextWhiteColor]}>Sign Up</Text>
                         </LinearGradient>

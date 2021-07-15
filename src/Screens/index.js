@@ -15,7 +15,10 @@ import TopSchools from './Onboarding/TopSchools';
 import GoalsStep from './Onboarding/GoalsStep';
 import Deadline from './Onboarding/Deadline';
 import Settings from './Settings/Settings';
-import Messages from './Messages/Messages'
+import Messages from './Messages/Messages';
+import McatNo from './Onboarding/McatNo';
+import Search from './Search/Search';
+import Compose from './Compose/Compose'
 export {
     Login,
     SignUp,
@@ -34,5 +37,8 @@ export {
     GoalsStep,
     Deadline,
     Settings,
-    Messages
+    Messages,
+    McatNo,
+    Search,
+    Compose
 }

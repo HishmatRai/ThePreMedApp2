@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
@@ -7,15 +7,16 @@ import Feather from 'react-native-vector-icons/dist/Feather';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
-import LinearGradient from 'react-native-linear-gradient';
 import Goals from './../../Components/Goals/Goals';
-import Applications from './../../Components/Applications/Applications'
+import Applications from './../../Components/Applications/Applications';
+import Tooltip from 'react-native-walkthrough-tooltip';
 export default function Progress(props) {
     const [tabs, setTabs] = useState(0);
-    let TabsTitle =[
-        {title:"Goals"},
-        {title:"Application"},
-        {title:"Top Schools"},
+    const [toolTio, setToolTop] = useState(false)
+    let TabsTitle = [
+        { title: "Goals" },
+        { title: "Application" },
+        { title: "Top Schools" },
     ]
 
     return (
@@ -42,50 +43,68 @@ export default function Progress(props) {
                     />
                 </View>
                 <View style={styles._notification_main}>
-                    <TouchableOpacity style={styles._chat_btn}>
+                    <TouchableOpacity style={styles._chat_btn} onPress={() => props.navigation.navigate("Messages")}>
                         <Ionicons name="chatbubbles-sharp" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._notification_btn}>
+                    <TouchableOpacity style={styles._notification_btn} onPress={() => setToolTop(true)}>
                         <Ionicons name="notifications" size={30} style={Theme._NotificationIconColor} />
                     </TouchableOpacity>
                 </View>
             </View>
 
             {/* <==========================> --- <==========================> */}
-                {/* <==========================> --- <==========================> */}
-<View style={styles.tabs_main}>
-<View style={styles._tabs}>
-    {TabsTitle.map((v,i)=>{
-        return(
-            <TouchableOpacity  onPress={() => setTabs(i)}
-            style={[tabs===i?[styles.tabActive,Theme._ActveTabBg]:styles.tabsList]}
+            <Tooltip
+                isVisible={toolTio}
+                showChildInTooltip={true}
+                accessible={true}
+                allowChildInteraction={true}
+                content={
+                    <View style={styles._notification_show_main}>
+                        <Text style={[styles._confirm_activity, Theme._QuestionsTextColor]}>Confirm your Activity</Text>
+                        <Text style={[styles._welcome_back, Theme._QuestionsTextColor]}>Welcome Back !</Text>
+                        <Text style={[styles._message, Theme._QuestionsTextColor]}>looks like you've been busy,Are these complete?</Text>
+                        <View style={[styles._line, Theme._AllStepsLineBg]}></View>
+                        <Text style={[styles._no_notification, Theme._QuestionsTextColor]}>No notifications for now!</Text>
+                    </View>
+                }
+                placement="top"
+                onClose={() => setToolTop(false)}
             >
-                <Text style={[tabs===i?[styles.tabText,Theme._ActveTabColor]:[styles.tabText,Theme.tabsColor]]}>{v.title}</Text>
-            </TouchableOpacity>
-        )
-    })}
-</View>
-<TouchableOpacity>
-    <Text>228 days</Text>
-</TouchableOpacity>
-</View>
+            </Tooltip>
+            {/* <==========================> --- <==========================> */}
+            <View style={styles.tabs_main}>
+                <View style={styles._tabs}>
+                    {TabsTitle.map((v, i) => {
+                        return (
+                            <TouchableOpacity onPress={() => setTabs(i)}
+                                style={[tabs === i ? [styles.tabActive, Theme._ActveTabBg] : styles.tabsList]}
+                            >
+                                <Text style={[tabs === i ? [styles.tabText, Theme._ActveTabColor] : [styles.tabText, Theme.tabsColor]]}>{v.title}</Text>
+                            </TouchableOpacity>
+                        )
+                    })}
+                </View>
+                <TouchableOpacity>
+                    <Text>228 days</Text>
+                </TouchableOpacity>
+            </View>
             <ScrollView showsVerticalScrollIndicator={false}>
-{tabs === 0 ?
-<View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
-  <Goals/>
-</View> 
-:null}
-{tabs === 1 ?
-    <View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
-   <Applications />
-</View> 
-:null}
+                {tabs === 0 ?
+                    <View style={[styles._tabs_data_show, Theme._TabsDataBg]}>
+                        <Goals />
+                    </View>
+                    : null}
+                {tabs === 1 ?
+                    <View style={[styles._tabs_data_show, Theme._TabsDataBg]}>
+                        <Applications />
+                    </View>
+                    : null}
 
-{tabs === 2 ?
-    <View style={[styles._tabs_data_show,Theme._TabsDataBg]}>
-    <Text>dss</Text>
-</View> 
-:null}
+                {tabs === 2 ?
+                    <View style={[styles._tabs_data_show, Theme._TabsDataBg]}>
+                        <Text>dss</Text>
+                    </View>
+                    : null}
             </ScrollView>
 
             {/* <==========================> --- <==========================> */}
@@ -183,37 +202,55 @@ const styles = StyleSheet.create({
     },
 
     // ====================>  <====================
-    tabs_main:{
-        marginTop:20,
-        paddingHorizontal:20,
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"space-between"
+    tabs_main: {
+        marginTop: 20,
+        paddingHorizontal: 20,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
     },
-    _tabs:{
-        flexDirection:"row",
-        width:"70%",
-        alignItems:"center",
-        justifyContent:"space-between"
+    _tabs: {
+        flexDirection: "row",
+        width: "70%",
+        alignItems: "center",
+        justifyContent: "space-between"
     },
-    tabActive:{
-        paddingHorizontal:10,
-        paddingVertical:15,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10
+    tabActive: {
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
     },
-    tabsList:{
-        paddingHorizontal:10,
-        paddingVertical:15,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10
+    tabsList: {
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
     },
-    tabText:{
-        fontWeight:"bold",
-        fontSize:16
+    tabText: {
+        fontWeight: "bold",
+        fontSize: 16
     },
-    _tabs_data_show:{
-        paddingHorizontal:10,
-        paddingVertical:20
+    _tabs_data_show: {
+        paddingHorizontal: 10,
+        paddingVertical: 20
+    },
+    _notification_show_main: {
+        width: "100%",
+        // height:200,
+        padding: 10
+    },
+    _confirm_activity: {
+        fontWeight: "bold",
+        fontSize: 18
+    },
+    _line: {
+        width: "100%",
+        height: 2,
+        marginVertical: 5
+    },
+    _no_notification: {
+        fontWeight: "bold",
+        textAlign: "center",
     }
 });

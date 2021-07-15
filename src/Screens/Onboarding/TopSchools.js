@@ -7,7 +7,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import {
     Select,
     CheckIcon,
-    Link
 } from "native-base"
 export default function TopSchools(props) {
     return (
@@ -34,13 +33,13 @@ export default function TopSchools(props) {
                             <View style={styles._data_header_main}>
                                 <View style={[styles._data_number_main]}>
                                     <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
-                                    <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                        <Ionicons name="checkmark" size={20} color="#4888f8" />
                                     </View>
                                 </View>
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
                                 <View style={[styles._data_number_main]}>
                                     <View style={[[styles._All_numbers_main, Theme._DoneStaps]]}>
-                                    <Ionicons name="checkmark" size={20} color="#4888f8" />
+                                        <Ionicons name="checkmark" size={20} color="#4888f8" />
                                     </View>
                                 </View>
                                 <View style={[styles._line_main, Theme._DoneStapsLineBg]}></View>
@@ -71,10 +70,10 @@ export default function TopSchools(props) {
                             />
                             <Text style={[styles._current_education, Theme._QuestionsTextColor]}>Top School Picks</Text>
                             <Text style={[styles._graduated_colllege, Theme._GrayColor]}>
-Coming soon: Depending on your membership the app will automatically suggest GPA and MCAT goals beased on the competitiveness of your selected top schools.</Text>
+                                Coming soon: Depending on your membership the app will automatically suggest GPA and MCAT goals beased on the competitiveness of your selected top schools.</Text>
 
-           {/* <==========================> --- <==========================> */}
-           <View style={styles._dropdown}>
+                            {/* <==========================> --- <==========================> */}
+                            <View style={styles._dropdown}>
                                 <Select
                                     minWidth="100%"
                                     accessibilityLabel="District OF Colummbia"
@@ -93,14 +92,14 @@ Coming soon: Depending on your membership the app will automatically suggest GPA
                                 </Select>
                             </View>
 
-                             {/* <==========================> --- <==========================> */}
-                             <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("GoalsStep")}>
+                            {/* <==========================> --- <==========================> */}
+                            <TouchableOpacity style={[styles._continue_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("GoalsStep")}>
                                 <Text style={[styles._continue_btn_text, Theme._TextWhiteColor]}>Continue</Text>
                             </TouchableOpacity>
                             <Text style={[styles._graduated_colllege, Theme._GrayColor]}>You can later add, edit and sort this list, plus add notes for each school in the Top Schools tab your progress Page.</Text>
-                                         {/* <==========================> --- <==========================> */}
-                                         <View style={styles._skip_back_main}>
-                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate0("Onboarding")}>
+                            {/* <==========================> --- <==========================> */}
+                            <View style={styles._skip_back_main}>
+                                <TouchableOpacity style={styles._skip_btn} onPress={() => props.navigation.navigate("Mcat")}>
                                     <Entypo name="chevron-small-left" size={24} color="gray" />
                                     <Text style={[styles._skip_btn_text, Theme._GrayColor]}>Back</Text>
                                 </TouchableOpacity>
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
     },
     _active_heading: {
         fontWeight: "bold",
-        fontSize:12
+        fontSize: 12
     },
     _All_numbers_main: {
         width: 25,
