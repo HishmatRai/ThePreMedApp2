@@ -10,9 +10,11 @@ import Theme from './../../Constant/Constant';
 import Goals from './../../Components/Goals/Goals';
 import Applications from './../../Components/Applications/Applications';
 import Tooltip from 'react-native-walkthrough-tooltip';
+import TopSchoolsTabs from './../../Components/TopSchoolsTabs/TopSchoolsTabs';
 export default function Progress(props) {
     const [tabs, setTabs] = useState(0);
     const [toolTio, setToolTop] = useState(false)
+    const [toolTio2, setToolTop2] = useState(false)
     let TabsTitle = [
         { title: "Goals" },
         { title: "Application" },
@@ -84,10 +86,29 @@ export default function Progress(props) {
                         )
                     })}
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setToolTop2(true)}>
                     <Text>228 days</Text>
                 </TouchableOpacity>
             </View>
+
+            {/* <==========================> --- <==========================> */}
+            <Tooltip
+                isVisible={toolTio2}
+                showChildInTooltip={true}
+                accessible={true}
+                allowChildInteraction={true}
+                content={
+                    <View style={styles._notification_show_main}>
+                        <View>
+                            <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>Today</Text>
+                            <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>16 Jul</Text>
+                        </View>
+                    </View>
+                }
+                placement="top"
+                onClose={() => setToolTop(false)}
+            >
+            </Tooltip>
             <ScrollView showsVerticalScrollIndicator={false}>
                 {tabs === 0 ?
                     <View style={[styles._tabs_data_show, Theme._TabsDataBg]}>
@@ -102,7 +123,7 @@ export default function Progress(props) {
 
                 {tabs === 2 ?
                     <View style={[styles._tabs_data_show, Theme._TabsDataBg]}>
-                        <Text>dss</Text>
+                        < TopSchoolsTabs />
                     </View>
                     : null}
             </ScrollView>
@@ -233,7 +254,8 @@ const styles = StyleSheet.create({
     },
     _tabs_data_show: {
         paddingHorizontal: 10,
-        paddingVertical: 20
+        paddingVertical: 20,
+        flex: 1
     },
     _notification_show_main: {
         width: "100%",

@@ -18,7 +18,7 @@ import Settings from './Settings/Settings';
 import Messages from './Messages/Messages';
 import McatNo from './Onboarding/McatNo';
 import Search from './Search/Search';
-import Compose from './Compose/Compose'
+import Compose from './Compose/Compose';
 export {
     Login,
     SignUp,

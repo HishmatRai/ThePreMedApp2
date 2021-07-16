@@ -265,7 +265,14 @@ _settingDataBottomBorderColor:{
 _settingDataTopBorderColor:{
     borderTopColor:"ebebeb"
 },
-_DatePickerIconColor:"#3e84ff"
+_DatePickerIconColor:"#3e84ff",
+
+_MedicalSchoolMap:{
+    backgroundColor:"#ff5722"
+},
+_MedicalSchoolList:{
+    backgroundColor:"#4caf50"
+}
 }
 
 
