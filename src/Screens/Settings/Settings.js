@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Share  } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Share } from 'react-native';
 import Theme from './../../Constant/Constant';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
@@ -16,21 +16,21 @@ import {
 } from "native-base";
 const onShare = async () => {
     try {
-      const result = await Share.share({
-        message:
-          'React Native | A framework for building native apps using React',
-      });
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // shared with activity type of result.activityType
-        } else {
-          // shared
+        const result = await Share.share({
+            message:
+                'React Native | A framework for building native apps using React',
+        });
+        if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+                // shared with activity type of result.activityType
+            } else {
+                // shared
+            }
+        } else if (result.action === Share.dismissedAction) {
+            // dismissed
         }
-      } else if (result.action === Share.dismissedAction) {
-        // dismissed
-      }
     } catch (error) {
-      alert(error.message);
+        alert(error.message);
     }
 }
 export default function Settings(props) {
@@ -68,7 +68,7 @@ export default function Settings(props) {
         { label: "07:00 am", value: "07:00 am" },
         { label: "08:00 am", value: "08:00 am" },
     ]
-    
+
     return (
 
         <View style={[styles.container, Theme._HomePageContainer]}>
@@ -81,7 +81,7 @@ export default function Settings(props) {
             />
             {/* <==========================> --- <==========================> */}
             <View style={styles._header_main}>
-                <TouchableOpacity style={styles._back_icon}>
+                <TouchableOpacity style={styles._back_icon} onPress={() => props.navigation.goBack()}>
                     <Ionicons name="arrow-back" size={25} color="#2b2b2b" />
                 </TouchableOpacity>
                 <Text style={[styles._header_heading, Theme._QuestionsTextColor]}>Settings</Text>

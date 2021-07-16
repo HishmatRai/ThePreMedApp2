@@ -86,8 +86,9 @@ export default function Progress(props) {
                         )
                     })}
                 </View>
-                <TouchableOpacity onPress={() => setToolTop2(true)}>
-                    <Text>228 days</Text>
+                <TouchableOpacity onPress={() => setToolTop2(true)} style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Text style={{ marginRight: 5 }}>6 days</Text>
+                    <AntDesign name="infocirlceo" size={15} style={Theme._TabsIconColor} />
                 </TouchableOpacity>
             </View>
 
@@ -98,10 +99,19 @@ export default function Progress(props) {
                 accessible={true}
                 allowChildInteraction={true}
                 content={
-                    <View style={styles._notification_show_main}>
-                        <View>
+                    <View style={styles._notification_show_main2}>
+                        <View style={styles._data_show}>
                             <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>Today</Text>
-                            <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>16 Jul</Text>
+                            <Text style={[styles._days_sub_heading, Theme._QuestionsTextColor]}>16 Jul</Text>
+                        </View>
+                        <View style={styles._popup_line}></View>
+                        <View style={styles._data_show}>
+                            <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>6 days</Text>
+                        </View>
+                        <View style={styles._popup_line}></View>
+                        <View style={styles._data_show}>
+                            <Text style={[styles._days_heading, Theme._QuestionsTextColor]}>Due</Text>
+                            <Text style={[styles._days_sub_heading, Theme._QuestionsTextColor]}>23 Jul</Text>
                         </View>
                     </View>
                 }
@@ -262,6 +272,12 @@ const styles = StyleSheet.create({
         // height:200,
         padding: 10
     },
+    _notification_show_main2: {
+        width: "100%",
+        padding: 10,
+        flexDirection: "row",
+        alignItems: "center"
+    },
     _confirm_activity: {
         fontWeight: "bold",
         fontSize: 18
@@ -274,5 +290,20 @@ const styles = StyleSheet.create({
     _no_notification: {
         fontWeight: "bold",
         textAlign: "center",
+    },
+    _data_show: {
+        width: "20%",
+        alignItems: "center"
+    },
+    _popup_line: {
+        backgroundColor: "black",
+        height: 2,
+        width: "20%"
+    },
+    _days_heading: {
+        fontWeight: "bold"
+    },
+    _days_sub_heading: {
+
     }
 });

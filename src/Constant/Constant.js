@@ -29,6 +29,9 @@ const styles = {
         borderColor: "#dcdcdc"
     },
 
+    _RightBorderColor: {
+        borderRightColor: "#dcdcdc"
+    },
     _InputPlaceholderTextColor: "#a4a4a4",
 
     _InputTextColor: "#a4a4a4",
@@ -241,38 +244,41 @@ const styles = {
     _AllStepsNumberBorderColor: {
         borderColor: "#b0b0b0"
     },
-    _NoBtnBg:{
-        backgroundColor:"#e2e2e2"
+    _NoBtnBg: {
+        backgroundColor: "#e2e2e2"
     },
-    _YesBtnBg:{
-        backgroundColor:"#3e84ff"
+    _YesBtnBg: {
+        backgroundColor: "#3e84ff"
     },
-    _SkipBtnTextColor:{
-        color:"#4888f8"
+    _SkipBtnTextColor: {
+        color: "#4888f8"
     },
-    _DoneStaps:{
-        borderColor:"#4888f8"
+    _DoneStaps: {
+        borderColor: "#4888f8"
     },
-    _DoneStapsLineBg:{
-        backgroundColor:"#4888f8"
+    _DoneStapsLineBg: {
+        backgroundColor: "#4888f8"
     },
-    _ToggleOnBg:"#3e82fd",
-    _ToggleOffBg:"gray",
-    _ToggleBorderColor:"#3e82fd",
-_settingDataBottomBorderColor:{
-    borderBottomColor:"ebebeb"
-},
-_settingDataTopBorderColor:{
-    borderTopColor:"ebebeb"
-},
-_DatePickerIconColor:"#3e84ff",
+    _ToggleOnBg: "#3e82fd",
+    _ToggleOffBg: "gray",
+    _ToggleBorderColor: "#3e82fd",
+    _settingDataBottomBorderColor: {
+        borderBottomColor: "ebebeb"
+    },
+    _settingDataTopBorderColor: {
+        borderTopColor: "ebebeb"
+    },
+    _DatePickerIconColor: "#3e84ff",
 
-_MedicalSchoolMap:{
-    backgroundColor:"#ff5722"
-},
-_MedicalSchoolList:{
-    backgroundColor:"#4caf50"
-}
+    _MedicalSchoolMap: {
+        backgroundColor: "#ff5722"
+    },
+    _MedicalSchoolList: {
+        backgroundColor: "#4caf50"
+    },
+    _BgGray: {
+        backgroundColor: "gray"
+    }
 }
 
 

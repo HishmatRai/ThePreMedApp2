@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, StatusBar, ScrollView, TouchableOpacity, Image, Linking } from 'react-native';
 import Entypo from 'react-native-vector-icons/dist/Entypo';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
@@ -8,8 +8,10 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import Theme from './../../Constant/Constant';
 import Tooltip from 'react-native-walkthrough-tooltip';
+
 export default function MyMentor(props) {
-    const [toolTio, setToolTop] = useState(false)
+    const [toolTio, setToolTop] = useState(false);
+   
     return (
         <View style={[styles._HomePageContainer, Theme._HomePageContainer]}>
 
@@ -70,22 +72,22 @@ export default function MyMentor(props) {
                     {/* <==========================> --- <==========================> */}
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles._card_main}>
-                            <TouchableOpacity style={[styles._card, Theme._GPACardBg]}>
+                            <TouchableOpacity style={[styles._card, Theme._GPACardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/gpa/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>GPA</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles._card, Theme._MCATCardBg]}>
+                            <TouchableOpacity style={[styles._card, Theme._MCATCardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/mcat-faqs/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>MCAT</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles._card, Theme._ShadowingCardBg]}>
+                            <TouchableOpacity style={[styles._card, Theme._ShadowingCardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/shadowing/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>Shadowing</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles._card, Theme._VolunteeringCardBg]}>
+                            <TouchableOpacity style={[styles._card, Theme._VolunteeringCardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/volunteering/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>Volunteering</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles._card, Theme._WorkActivitiesCardBg]}>
+                            <TouchableOpacity style={[styles._card, Theme._WorkActivitiesCardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/work-and-activities/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>Work & Activities</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles._card2, Theme._ApplicationCardBg]}>
+                            <TouchableOpacity style={[styles._card2, Theme._ApplicationCardBg]} onPress={() => Linking.openURL('https://www.motivatemd.com/mymentor-faq/application/')}>
                                 <Text style={[styles._card_data, Theme._TextWhiteColor]}>Application</Text>
                             </TouchableOpacity>
                         </View>
@@ -97,7 +99,7 @@ export default function MyMentor(props) {
                     <Text style={[styles._faqs_heading, Theme._QuestionsTextColor]}>
                         Ask MyMentor a question...</Text>
                     <Text style={[styles._MyMentor_message, Theme._GrayColor]}>Our team of med students and physician mentors read and reply to your messages daily!</Text>
-                    <TouchableOpacity style={[styles._ask_now_btn, Theme._HomeAddBtnBg]}>
+                    <TouchableOpacity style={[styles._ask_now_btn, Theme._HomeAddBtnBg]} onPress={() => props.navigation.navigate("Compose")}>
                         <Text style={[styles._ask_now_btn_text, Theme._TextWhiteColor]}>Ask Now!</Text>
                     </TouchableOpacity>
                 </View>
@@ -105,9 +107,9 @@ export default function MyMentor(props) {
                 {/* <==========================> --- <==========================> */}
                 <View style={[styles.Recommendations, Theme._HeaderBg]}>
                     <Text style={[styles._Recommendations_main_heading, Theme._QuestionsTextColor]}>Recommendations</Text>
-                  
+
                     {/* <==========================> --- <==========================> */}
-                    <View style={[styles._list_main, Theme._MyMentorListMain]}>
+                    <TouchableOpacity style={[styles._list_main, Theme._MyMentorListMain]} onPress={() => props.navigation.navigate("Progress")}>
                         <Text style={[styles._list_heading, Theme._QuestionsTextColor]}>Shadowing</Text>
                         <View style={styles._list_header_main}>
                             <Text style={[styles._list_header_heading, Theme._GrayColor]}>Completed 0.0 Hours</Text>
@@ -121,10 +123,10 @@ export default function MyMentor(props) {
                                 </Text>
                                 to make your goal</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
 
-                         {/* <==========================> --- <==========================> */}
-                         <View style={[styles._list_main, Theme._MyMentorListMain]}>
+                    {/* <==========================> --- <==========================> */}
+                    <TouchableOpacity style={[styles._list_main, Theme._MyMentorListMain]} onPress={() => props.navigation.navigate("Progress")}>
                         <Text style={[styles._list_heading, Theme._QuestionsTextColor]}>Volunteering</Text>
                         <View style={styles._list_header_main}>
                             <Text style={[styles._list_header_heading, Theme._GrayColor]}>Completed 0.0 Hours</Text>
@@ -138,9 +140,9 @@ export default function MyMentor(props) {
                                 </Text>
                                 to make your goal</Text>
                         </View>
-                    </View>
-                     {/* <==========================> --- <==========================> */}
-                     <View style={[styles._list_main, Theme._MyMentorListMain]}>
+                    </TouchableOpacity>
+                    {/* <==========================> --- <==========================> */}
+                    <TouchableOpacity style={[styles._list_main, Theme._MyMentorListMain]} onPress={() => props.navigation.navigate("Progress")}>
                         <Text style={[styles._list_heading, Theme._QuestionsTextColor]}>Work & Activities</Text>
                         <View style={styles._list_header_main}>
                             <Text style={[styles._list_header_heading, Theme._GrayColor]}>Completed 0.0 Hours</Text>
@@ -154,7 +156,7 @@ export default function MyMentor(props) {
                                 </Text>
                                 to make your goal</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
 
