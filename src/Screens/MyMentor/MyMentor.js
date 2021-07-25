@@ -23,7 +23,7 @@ export default function MyMentor(props) {
                 translucent={true}
             />
             {/* <==========================> --- <==========================> */}
-            <View style={[styles._header_main, Theme._HeaderBg]}>
+            <View style={[styles._header_main, Theme._Container2]}>
                 <View style={styles._menu_main}>
                     <TouchableOpacity style={styles._menu_btn} onPress={() => props.navigation.openDrawer()}>
                         <Entypo name="menu" size={30} style={Theme._MenuIconColor} />
@@ -201,13 +201,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     _menu_main: {
-        width: "20%"
+        width: "10%"
     },
     _logo_main: {
-        width: "55%",
+        width: "70%",
     },
     _notification_main: {
-        width: "25%",
+        width: "20%",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between"
@@ -228,8 +228,10 @@ const styles = StyleSheet.create({
         borderRadius: 30 / 2,
     },
     _logo: {
-        width: 130,
-        height: 30
+        width:200,
+        height:20,
+        alignSelf:"center",
+        marginTop:10
     },
 
     // ====================> TabBar <====================

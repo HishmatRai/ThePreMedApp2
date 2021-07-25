@@ -4,7 +4,7 @@ const styles = {
     },
 
     _MenuIconColor: {
-        color: "#1a2334"
+        color: "white"
     },
 
     _StatusBarBg: "black",
@@ -12,7 +12,9 @@ const styles = {
     _Container: {
         backgroundColor: "white"
     },
-
+    _Container2: {
+        backgroundColor: "#03042B"
+    },
     _HomePageContainer: {
         backgroundColor: "#e6eaed"
     },
@@ -67,7 +69,7 @@ const styles = {
     },
 
     _NotificationIconColor: {
-        color: "#1a2334"
+        color: "white"
     },
 
 

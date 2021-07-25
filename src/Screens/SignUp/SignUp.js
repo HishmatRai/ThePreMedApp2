@@ -21,7 +21,7 @@ export default function SignUp(props) {
     let [language, setLanguage] = React.useState("")
 
     return (
-        <View style={[styles.container, Theme._Container]}>
+        <View style={[styles.container, Theme._Container2]}>
 
             {/* <==========================> --- <==========================> */}
             <StatusBar
@@ -212,8 +212,8 @@ const styles = StyleSheet.create({
     },
     _logo: {
         marginTop: 100,
-        width: 220,
-        height: 40,
+        // width: 220,
+        // height: 40,
         alignSelf: "center"
     },
     _title: {

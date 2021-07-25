@@ -10,7 +10,7 @@ export default function Login(props) {
     const [password, onChangePassword] = React.useState("");
     const [remember, setRemember] = useState(true);
     return (
-        <View style={[styles.container, Theme._Container]}>
+        <View style={[styles.container, Theme._Container2]}>
 
             {/* <==========================> --- <==========================> */}
             <StatusBar
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
     },
     _logo: {
         marginTop: 100,
-        width: 220,
-        height: 40,
+        // width: 220,
+        // height: 40,
         alignSelf: "center"
     },
     _title: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
         flex: 1.0,
         alignSelf: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#03042B',
         width: '99%',
         margin: 2,
         borderRadius: 10
